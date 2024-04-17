@@ -28,14 +28,14 @@ export default function Chat() {
           {messages.map((m, index) => (
             <div key={index} className="whitespace-pre-wrap p-2">
               {m.role === 'user' ? (
-                <span className="flex items-center">
-                  <UserIcon className="h-6 w-6 mr-2" />
-                  (You) <span className="text-blue-400">{m.content}</span>
+                <span className="flex items-start">
+                  <UserIcon className="min-w-6 h-6 w-6" />
+                  (You)<span className="text-blue-400"> {m.content}</span>
                 </span>
               ) : (
-                <span className="flex items-center">
-                  <FaceSmileIcon className="h-6 w-6 mr-2" />
-                  (Philo) <span className="text-blue-400">{m.content}</span>
+                <span className="flex items-start">
+                  <FaceSmileIcon className="min-w-6 h-6 w-6" />
+                  (Philo)<span className="text-blue-400"> {m.content}</span>
                 </span>
               )}
             </div>
