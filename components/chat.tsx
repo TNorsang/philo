@@ -1,9 +1,10 @@
 'use client'
 
-import { ScrollArea } from '@/components/ui/scroll-area'
+import React, { useEffect, useRef } from 'react'
+import { ScrollArea } from '@/components/ui/scroll-area' // Make sure this is forwarding ref if custom
 import { useChat } from 'ai/react'
-import { useEffect, useRef } from 'react'
 import Button from '@/components/ui/button'
+import { FaceSmileIcon, UserIcon } from '@heroicons/react/24/outline'
 
 export default function Chat() {
   const ref = useRef<HTMLDivElement>(null)
@@ -11,36 +12,40 @@ export default function Chat() {
     useChat()
 
   useEffect(() => {
-    if (ref.current === null)
-      return ref.current.scrollTo(0, ref.current.scrollHeight)
+    // Automatically scroll to the bottom whenever the messages update
+    if (ref.current === null) return
+    ref.current.scrollTo(0, ref.current.scrollHeight)
   }, [messages])
+
   return (
-    <section className="relative text-sinc-700 h-screen flex justify-center items-end">
-      <div className="w-screen max-w-md">
-        <ScrollArea className="h-80 overflow-y-auto" ref={ref}>
+    <section className="relative text-sinc-700 h-screen w-screen flex justify-center items-end">
+      <div className="w-screen max-w-4xl">
+        <div
+          ref={ref}
+          className="overflow-y-auto h-md w-full rounded-md border"
+        >
           {error && <div className="text-sm text-red-400">{error.message}</div>}
-          {messages.map((m) => (
-            <div key={m.id} className="whitespace-pre-wrap">
+          {messages.map((m, index) => (
+            <div key={index} className="whitespace-pre-wrap p-2">
               {m.role === 'user' ? (
-                <>
-                  <span>User: </span>
-                  <div className="mt-1.5 text-sm">{m.content}</div>
-                </>
+                <span className="flex items-center">
+                  <UserIcon className="h-6 w-6 mr-2" />
+                  (You) <span className="text-blue-400">{m.content}</span>
+                </span>
               ) : (
-                <>
-                  <span>AI: </span>
-                  <div className="mt-1.5 text-sm">{m.content}</div>
-                </>
+                <span className="flex items-center">
+                  <FaceSmileIcon className="h-6 w-6 mr-2" />
+                  (Philo) <span className="text-blue-400">{m.content}</span>
+                </span>
               )}
             </div>
           ))}
-        </ScrollArea>
-
+        </div>
         <form onSubmit={handleSubmit} className="relative mt-4">
           <input
-            className="w-full p-2 mb-8 border border-gray-300 rounded shadow-xl"
+            className="w-full p-2 mb-8 border border-gray-100 rounded shadow-xl"
             value={input}
-            placeholder=""
+            placeholder="Type your message here..."
             onChange={handleInputChange}
           />
           <Button
