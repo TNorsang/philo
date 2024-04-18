@@ -7,12 +7,16 @@ import React, { useState } from 'react'
 
 export default function Home() {
   const [showChat, setShowChat] = useState(false)
+
   return (
     <main className="flex flex-col h-screen items-center justify-center">
-      <div>
-        <Robot />
-      </div>
-      <Chat />
+      {!showChat ? (
+        <div onClick={() => setShowChat(true)}>
+          <Robot />
+        </div>
+      ) : (
+        <Chat />
+      )}
     </main>
   )
 }

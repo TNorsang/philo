@@ -40,8 +40,8 @@ export default function Chat() {
   }, [messages])
 
   return (
-    <section className="relative text-sinc-700 h-screen w-screen flex justify-center items-end">
-      <div className="w-screen max-w-4xl">
+    <section className="relative text-sinc-700 h-screen w-screen flex justify-center items-center">
+      <div className="w-11/12 mx-auto">
         <div
           ref={ref}
           className="overflow-y-auto h-md w-full rounded-md border"
@@ -67,6 +67,7 @@ export default function Chat() {
           <input
             className="w-full p-2 mb-8 border border-gray-100 rounded shadow-xl"
             value={input}
+            maxLength={5}
             placeholder="Type your message here..."
             onChange={handleInputChange}
           />
