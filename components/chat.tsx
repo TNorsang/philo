@@ -46,7 +46,7 @@ export default function Chat() {
           ref={ref}
           className="overflow-y-auto h-md w-full rounded-md border"
         >
-          {error && <div className="text-sm text-red-400">{error.message}</div>}
+          {error && <div className="text-sm ">{error.message}</div>}
           {messages.map((m, index) => (
             <div key={index} className="whitespace-pre-wrap p-2">
               {m.role === 'user' ? (
@@ -57,7 +57,7 @@ export default function Chat() {
               ) : (
                 <span className="flex items-start">
                   <FaceSmileIcon className="min-w-6 h-6 w-6" />
-                  (Philo)<span className="text-blue-400"> {m.content}</span>
+                  (Philo)<span className="text-yellow-500"> {m.content}</span>
                 </span>
               )}
             </div>
