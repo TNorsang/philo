@@ -8,11 +8,33 @@ import { FaceSmileIcon, UserIcon } from '@heroicons/react/24/outline'
 
 export default function Chat() {
   const ref = useRef<HTMLDivElement>(null)
-  const { messages, input, handleInputChange, handleSubmit, isLoading, error } =
-    useChat()
+  const options = {
+    append: {
+      content: 'Answer me with 3 words only',
+      role: 'user',
+      createdAt: '2024-04-18T16:12:58.830Z',
+      id: 'IYCFt22',
+    },
+  }
 
+  const {
+    messages,
+    input,
+    append,
+    handleInputChange,
+    handleSubmit,
+    isLoading,
+    error,
+  } = useChat()
+  // useEffect(() => {
+  //   append({
+  //     content: 'Answer me with 3 words only',
+  //     role: 'user',
+  //   })
+  // }, [])
   useEffect(() => {
     // Automatically scroll to the bottom whenever the messages update
+    console.log(messages)
     if (ref.current === null) return
     ref.current.scrollTo(0, ref.current.scrollHeight)
   }, [messages])
