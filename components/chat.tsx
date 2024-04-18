@@ -64,13 +64,19 @@ export default function Chat() {
           ))}
         </div>
         <form onSubmit={handleSubmit} className="relative mt-4">
-          <input
-            className="w-full p-2 mb-8 border border-gray-100 rounded shadow-xl"
+          <textarea
+            className="w-full p-2 mb-8 border border-gray-100 rounded shadow-xl resize-none"
             value={input}
-            maxLength={5}
             placeholder="Type your message here..."
             onChange={handleInputChange}
-          />
+            rows={2}
+            style={{
+              width: '100%',
+              paddingRight: '10%', // Note the camelCase and string value
+              boxSizing: 'border-box', // camelCase for CSS property
+            }}
+          ></textarea>
+
           <Button
             children={{
               className: 'mt-2 absolute right-3',
