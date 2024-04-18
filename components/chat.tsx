@@ -42,6 +42,7 @@ export default function Chat() {
   return (
     <section className="relative text-sinc-700 h-screen w-screen flex justify-center items-end">
       <div className="w-screen max-w-4xl">
+        <h1> Hello</h1>
         <div
           ref={ref}
           className="overflow-y-auto h-md w-full rounded-md border"
