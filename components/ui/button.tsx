@@ -1,7 +1,7 @@
-import { BeakerIcon, ChatBubbleLeftRightIcon } from '@heroicons/react/24/solid'
+import { ChatBubbleLeftRightIcon } from '@heroicons/react/24/solid'
 
 interface ButtonProps {
-  children: any // Explicitly typing children as any
+  children: any
 }
 
 const Button: React.FC<ButtonProps> = ({ children }) => {
