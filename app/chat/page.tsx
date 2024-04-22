@@ -1,10 +1,10 @@
 'use client'
 
 import React, { useEffect, useRef } from 'react'
-import { ScrollArea } from '@/components/ui/scroll-area' // Make sure this is forwarding ref if custom
 import { useChat } from 'ai/react'
 import Button from '@/components/ui/button'
 import { FaceSmileIcon, UserIcon } from '@heroicons/react/24/outline'
+import RobotSVG from '@/components/ui/robot'
 
 export default function Chat() {
   const ref = useRef<HTMLDivElement>(null)
@@ -26,6 +26,7 @@ export default function Chat() {
 
   return (
     <section className="relative text-sinc-700 h-screen w-screen flex justify-center items-center">
+      <RobotSVG className="m-10" width={50} />
       <div className="w-11/12 mx-auto">
         <div
           ref={ref}

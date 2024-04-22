@@ -1,21 +1,18 @@
 'use client'
 
-import Chat from '@/components/chat'
 import Robot from '@/components/ui/robot'
 import React, { useState } from 'react'
+import Link from 'next/link'
 
 export default function Home() {
   const [showChat, setShowChat] = useState(false)
 
   return (
     <main className="flex flex-col h-screen items-center justify-center">
-      {!showChat ? (
-        <div onClick={() => setShowChat(true)}>
-          <Robot />
-        </div>
-      ) : (
-        <Chat />
-      )}
+      <h1>Hello</h1>
+      <Link className="bg-blue-500" href="/chat">
+        Go To Chat
+      </Link>
     </main>
   )
 }
