@@ -1,7 +1,6 @@
 'use client'
 
 import Chat from '@/components/chat'
-import Image from 'next/image'
 import Robot from '@/components/ui/robot'
 import React, { useState } from 'react'
 

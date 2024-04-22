@@ -8,24 +8,9 @@ import { FaceSmileIcon, UserIcon } from '@heroicons/react/24/outline'
 
 export default function Chat() {
   const ref = useRef<HTMLDivElement>(null)
-  const options = {
-    append: {
-      content: 'Answer me with 3 words only',
-      role: 'user',
-      createdAt: '2024-04-18T16:12:58.830Z',
-      id: 'IYCFt22',
-    },
-  }
 
-  const {
-    messages,
-    input,
-    append,
-    handleInputChange,
-    handleSubmit,
-    isLoading,
-    error,
-  } = useChat()
+  const { messages, input, handleInputChange, handleSubmit, isLoading, error } =
+    useChat()
   // useEffect(() => {
   //   append({
   //     content: 'Answer me with 3 words only',
@@ -50,14 +35,20 @@ export default function Chat() {
           {messages.map((m, index) => (
             <div key={index} className="whitespace-pre-wrap p-2">
               {m.role === 'user' ? (
-                <span className="flex items-start">
-                  <UserIcon className="min-w-6 h-6 w-6" />
-                  (You)<span className="text-blue-400"> {m.content}</span>
+                <span className="flex justify-end items-center">
+                  <span className="text-white mr-2 border bg-blue-500 p-2 rounded-lg">
+                    {m.content}
+                  </span>
+                  (You)
+                  <UserIcon className="min-w-6 h-6 w-6 ml-2" />
                 </span>
               ) : (
-                <span className="flex items-start">
-                  <FaceSmileIcon className="min-w-6 h-6 w-6" />
-                  (Philo)<span className="text-yellow-500"> {m.content}</span>
+                <span className="flex items-center">
+                  <FaceSmileIcon className="min-w-6 h-6 w-6 mr-2" />
+                  (Philo)
+                  <span className="text-white ml-2 bg-gray-400 p-2 rounded-lg">
+                    {m.content}
+                  </span>
                 </span>
               )}
             </div>

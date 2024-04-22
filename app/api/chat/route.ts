@@ -4,7 +4,6 @@ import { NextResponse } from 'next/server';
 
 export const runtime = 'edge'
 
-// Use the correct environment variable name here
 const openai = new OpenAi({ apiKey: process.env.OPEN_API_KEY || ''})
 
 export async function POST(req: Request) {
@@ -15,7 +14,7 @@ export async function POST(req: Request) {
         }
 
         const {messages} = await req.json()
-        const messagesTruncated = messages.slice(-6);
+        const messagesTruncated = messages.slice(-10);
 
         console.log("Truncated Messages" + JSON.stringify(messagesTruncated))
 
