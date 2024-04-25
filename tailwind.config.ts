@@ -22,7 +22,8 @@ const config = {
         md: '500px',
       },
       colors: {
-        customOrange: '#FFAF14',
+        customOrange: '#F56B13',
+        customLightOrange: '#FEBE24',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
