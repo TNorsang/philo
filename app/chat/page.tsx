@@ -26,7 +26,6 @@ export default function Chat() {
 
   return (
     <section className="relative text-sinc-700 h-screen w-screen flex justify-center items-center">
-      <RobotSVG className="m-10" width={50} />
       <div className="w-11/12 mx-auto">
         <div
           ref={ref}

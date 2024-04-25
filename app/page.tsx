@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <main className="flex flex-col h-screen items-center justify-center bg-gradient-to-b from-customOrange to-white">
       <motion.div>
-        <h1 className="text-white text-6xl">Find Your Forever Friend Soon!</h1>
+        <h1 className="text-white text-6xl">Meet Your Forever Friend</h1>
       </motion.div>
     </main>
   )
