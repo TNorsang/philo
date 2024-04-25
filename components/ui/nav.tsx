@@ -24,9 +24,11 @@ export default function NavBar() {
           </motion.div>
         </motion.li>
 
-        <li className="hover:bg-white hover:bg-opacity-20 focus:bg-white focus:bg-opacity-20">
-          <Link href="/">Home</Link>
-        </li>
+        <motion.li className="hover:bg-white hover:bg-opacity-20 focus:bg-white focus:bg-opacity-20">
+          <motion.div>
+            <Link href="/">Home</Link>
+          </motion.div>
+        </motion.li>
         <li className="hover:bg-white hover:bg-opacity-20 focus:bg-white focus:bg-opacity-20">
           <Link href="/chat">Chat</Link>
         </li>
