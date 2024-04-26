@@ -2,8 +2,12 @@
 
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, useGLTF } from '@react-three/drei'
+import dynamic from 'next/dynamic'
 
 const PhiloModel = () => {
+  const My3DModel = dynamic(() => import('../../components/ui/philoModel'), {
+    ssr: false,
+  }) // Client-side rendering
   const { scene } = useGLTF('/models/philo.glb')
   return (
     <Canvas className="w-2 h-2">
