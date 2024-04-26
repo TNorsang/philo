@@ -8,11 +8,9 @@ import PhiloModel from '@/components/ui/philoModel'
 import dynamic from 'next/dynamic'
 
 export default function Home() {
-  const My3DModel = dynamic(() => import('../components/ui/philoModel'), {
+  const PhiloModel = dynamic(() => import('../components/ui/philoModel'), {
     ssr: false,
-  }) // Client-side rendering
-
-  const [showChat, setShowChat] = useState(false)
+  })
 
   return (
     <main className="flex flex-col h-screen items-center justify-center bg-gradient-to-b from-customOrange to-customLightOrange">
