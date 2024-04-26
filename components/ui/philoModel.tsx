@@ -17,7 +17,7 @@ const PhiloModel = () => {
       <pointLight position={[-5, -10, -7.5]} intensity={0.5} />{' '}
       {/* Additional point light */}
       <OrbitControls />
-      <primitive object={scene} scale={0.2} /> {/* Scale down to 10% */}
+      <primitive object={scene} scale={0.4} /> {/* Scale down to 10% */}
     </Canvas>
   )
 }
