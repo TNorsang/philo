@@ -29,24 +29,22 @@ export default function Chat() {
       <div className="w-11/12 mx-auto">
         <div
           ref={ref}
-          className="overflow-y-auto h-md w-full rounded-md border"
+          className="overflow-y-auto h-md w-full rounded-md border-4 bg-black bg-opacity-50"
         >
           {error && <div className="text-sm ">{error.message}</div>}
           {messages.map((m, index) => (
-            <div key={index} className="whitespace-pre-wrap p-2">
+            <div key={index} className="whitespace-pre-wrap p-2 ">
               {m.role === 'user' ? (
                 <span className="flex justify-end items-center">
-                  <span className="text-white mr-2 border bg-blue-500 p-2 rounded-lg">
+                  <span className="text-white mr-2 bg-blue-500 p-2 rounded-2xl">
                     {m.content}
                   </span>
                   (You)
-                  <UserIcon className="min-w-6 h-6 w-6 ml-2" />
                 </span>
               ) : (
                 <span className="flex items-center">
-                  <FaceSmileIcon className="min-w-6 h-6 w-6 mr-2" />
                   (Philo)
-                  <span className="text-white ml-2 bg-gray-400 p-2 rounded-lg">
+                  <span className="text-white ml-2 bg-gray-400 p-2 rounded-2xl">
                     {m.content}
                   </span>
                 </span>
