@@ -13,7 +13,7 @@ export default function Home() {
   })
 
   return (
-    <main className="flex flex-col h-screen items-center justify-center bg-gradient-to-b from-customOrange to-customLightOrange">
+    <main className=" flex flex-col h-screen items-center justify-center">
       <motion.div className=" mt-28 sm:mt-24">
         <h1 className="text-white text-3xl sm:text-6xl">
           Meet Your Forever Friend

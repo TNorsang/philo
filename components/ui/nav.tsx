@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 
 export default function NavBar() {
   return (
-    <nav className="relative flex justify-center items-center h-20 border-b-2 border-orange-300 bg-customOrange text-white text-2xl">
+    <nav className="relative flex justify-center items-center h-20 border-b-2  text-white bg-black bg-opacity-40 text-2xl">
       <ul className="flex items-center space-x-10 list-none">
         <motion.div
           whileHover={{ scale: 1.1 }}
