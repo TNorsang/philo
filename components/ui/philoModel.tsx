@@ -8,16 +8,16 @@ const PhiloModel = () => {
   const My3DModel = dynamic(() => import('../../components/ui/philoModel'), {
     ssr: false,
   }) // Client-side rendering
-  const { scene } = useGLTF('/models/philo.glb')
+  const { scene } = useGLTF('/models/baymax.glb')
   return (
     <Canvas className="w-2 h-2">
-      <ambientLight intensity={0.7} /> {/* Low-level ambient light */}
+      <ambientLight intensity={0.5} /> {/* Low-level ambient light */}
       <directionalLight position={[5, 10, 7.5]} intensity={0.9} />
       {/* Mimic sunlight */}
-      <pointLight position={[-5, -10, -7.5]} intensity={0.5} />{' '}
+      <pointLight position={[-5, -10, -7.5]} intensity={0.9} />
       {/* Additional point light */}
       <OrbitControls />
-      <primitive object={scene} scale={0.4} />
+      <primitive object={scene} scale={0.18} />
     </Canvas>
   )
 }
