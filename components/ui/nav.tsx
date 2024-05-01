@@ -9,19 +9,21 @@ export default function NavBar() {
   return (
     <nav className="flex text-white">
       <ul className="list-none">
-        <motion.div
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          className="absolute top-[32] left-[24] sm:top-2 sm:left-4"
-        >
-          <Image
-            className="rounded-full"
-            src="/images/philo-logo.png"
-            alt="Logo"
-            width={48}
-            height={48}
-          />
-        </motion.div>
+        <Link href="/">
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            className="absolute top-[32] left-[24] sm:top-2 sm:left-4"
+          >
+            <Image
+              className="rounded-full"
+              src="/images/philo-logo.png"
+              alt="Logo"
+              width={48}
+              height={48}
+            />
+          </motion.div>
+        </Link>
         <motion.div className="absolute left-[80] top-[32] text-[32px] font-bold text-white">
           Philo
         </motion.div>

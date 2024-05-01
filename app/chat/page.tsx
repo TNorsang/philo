@@ -25,11 +25,11 @@ export default function Chat() {
   }, [messages])
 
   return (
-    <section className="relative text-sinc-700 h-screen w-screen flex justify-center items-center bottom-14">
-      <div className="w-11/12 mx-auto">
+    <section>
+      <div>
         <div
           ref={ref}
-          className="overflow-y-auto h-md w-full border-4 bg-black bg-opacity-50 p-2 rounded-2xl"
+          className="w-screen h-[456] overflow-y-auto p-2 bg-gray-300 bg-opacity-50 absolute top-[144]"
         >
           {error && <div className="text-sm ">{error.message}</div>}
           {messages.map((m, index) => (
@@ -52,27 +52,27 @@ export default function Chat() {
             </div>
           ))}
         </div>
-        <form onSubmit={handleSubmit} className="relative mt-4">
-          <textarea
-            className="w-full p-2 mb-8 border border-gray-100 rounded shadow-xl resize-none"
-            value={input}
-            placeholder="Type your message here..."
-            onChange={handleInputChange}
-            rows={2}
-            style={{
-              width: '100%',
-              paddingRight: '10%', // Note the camelCase and string value
-              boxSizing: 'border-box', // camelCase for CSS property
-            }}
-          ></textarea>
-
+        <form onSubmit={handleSubmit} className="">
           <Button
             children={{
-              className: 'mt-2 absolute right-3',
+              className: 'mt-2 absolute top-[528] right-[72]',
               type: 'submit',
               disabled: isLoading,
             }}
           />
+          <textarea
+            className="absolute w-[334] h-[56] top-[522] ml-[48] border p-2 mb-8 rounded-full shadow-xl resize-none"
+            value={input}
+            placeholder="Let's Talk!"
+            onChange={handleInputChange}
+            rows={2}
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              paddingRight: '5%',
+            }}
+          ></textarea>
         </form>
       </div>
     </section>
