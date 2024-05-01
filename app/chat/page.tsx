@@ -69,6 +69,8 @@ export default function Chat() {
               justifyContent: 'center',
               alignItems: 'center',
               paddingRight: '5%',
+              paddingLeft: '4%',
+              paddingTop: 'calc(6% - 0.5em)',
             }}
           ></textarea>
           <Button
