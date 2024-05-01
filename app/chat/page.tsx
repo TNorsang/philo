@@ -61,7 +61,7 @@ export default function Chat() {
           <textarea
             className="relative w-[334px] h-[56px] top-[160px] border-4 p-2 mb-8 rounded-full shadow-xl resize-none overflow-y-hidden"
             value={input}
-            placeholder="Let's Talk!"
+            placeholder="Say Something to Philo :)"
             onChange={handleInputChange}
             rows={2}
             style={{
