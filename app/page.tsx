@@ -27,7 +27,6 @@ export default function Home() {
           Meet Your Forever Friend
         </h1>
       </motion.div>
-
       <motion.div
         whileHover={{ scale: 1.03 }}
         className="bg-gradient-to-b from-white to-gray-300 w-[200] h-[80] flex justify-center items-center absolute right-[16] top-[424] text-[24px] font-semibold text-customFontOrange"
