@@ -28,10 +28,10 @@ export default function NavBar() {
           Philo
         </motion.div>
 
-        <motion.li className="hidden hover:bg-white hover:bg-opacity-20 h-20 w-24 relative sm:right-16 flex items-center justify-center">
+        <motion.li className="hover:bg-white hover:bg-opacity-20 h-20 w-24 relative sm:right-16 hidden">
           <Link href="/">HOME</Link>
         </motion.li>
-        <motion.li className="hidden hover:bg-white hover:bg-opacity-20 h-20 w-24 relative sm:left-7 flex items-center justify-center">
+        <motion.li className="hover:bg-white hover:bg-opacity-20 h-20 w-24 relative sm:left-7 hidden">
           <Link href="/chat">CHAT</Link>
         </motion.li>
         <motion.div
