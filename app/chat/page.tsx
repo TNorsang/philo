@@ -25,26 +25,31 @@ export default function Chat() {
   }, [messages])
 
   return (
-    <section>
-      <div>
+    <section className="">
+      <div className="flex flex-col items-center">
         <div
           ref={ref}
-          className="w-screen h-[456px] overflow-y-auto p-2 bg-gray-300 bg-opacity-50 absolute top-[144px]"
+          className="w-screen h-[472px] overflow-y-scroll overflow-x-hidden  bg-gray-300 bg-opacity-50 relative top-[144px] flex flex-col items-center p-[16px]"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {error && <div className="text-sm">{error.message}</div>}
           {messages.map((m, index) => (
-            <div key={index} className="whitespace-pre-wrap p-2">
+            <div key={index} className="">
               {m.role === 'user' ? (
-                <span className="flex justify-end items-center">
-                  <span className="text-white mr-2 bg-blue-500 p-2 rounded-2xl">
+                <span className="flex justify-end items-center w-screen pb-[16px]">
+                  <span className="text-white mr-[8px] bg-blue-500 p-[16px] rounded-2xl text-[16px]">
                     {m.content}
                   </span>
-                  <span className="text-white">(You)</span>
+                  <span className="text-white pr-[8px] text-[16px] font-medium mr-[16px]">
+                    (You)
+                  </span>
                 </span>
               ) : (
-                <span className="flex items-center">
-                  <span className="text-white">(Philo)</span>
-                  <span className="text-white ml-2 bg-gray-400 p-2 rounded-2xl">
+                <span className="flex items-center w-screen pl-[16px] pb-[16px]">
+                  <span className="text-white text-[16px] font-medium">
+                    (Philo)
+                  </span>
+                  <span className="text-white ml-[8px] bg-customOrange p-[16px] rounded-2xl text-[16px] mr-[16px]">
                     {m.content}
                   </span>
                 </span>
@@ -52,16 +57,9 @@ export default function Chat() {
             </div>
           ))}
         </div>
-        <form onSubmit={handleSubmit} className="">
-          <Button
-            children={{
-              className: 'mt-2 absolute top-[528px] right-[72px]',
-              type: 'submit',
-              disabled: isLoading,
-            }}
-          />
+        <form onSubmit={handleSubmit} className="w-[334px] h-[56px]">
           <textarea
-            className="absolute w-[334px] h-[56px] top-[522px] ml-[48px] border p-2 mb-8 rounded-full shadow-xl resize-none"
+            className="relative w-[334px] h-[56px] top-[160px] border-4 p-2 mb-8 rounded-full shadow-xl resize-none overflow-y-hidden"
             value={input}
             placeholder="Let's Talk!"
             onChange={handleInputChange}
@@ -73,6 +71,13 @@ export default function Chat() {
               paddingRight: '5%',
             }}
           ></textarea>
+          <Button
+            children={{
+              className: 'relative top-[88px] left-[296px]',
+              type: 'submit',
+              disabled: isLoading,
+            }}
+          />
         </form>
       </div>
     </section>
