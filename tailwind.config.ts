@@ -24,6 +24,7 @@ const config = {
       colors: {
         customOrange: '#F56B13',
         customLightOrange: '#FEBE24',
+        customFontOrange: '#FA941C',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
