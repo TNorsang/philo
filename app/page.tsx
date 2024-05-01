@@ -15,14 +15,14 @@ export default function Home() {
     <main className="relative">
       <motion.div>
         <Image
-          className="absolute top-[235] right-[32]"
+          className="absolute top-36 right-36"
           alt="Bay Max"
           src="/images/bmax.png"
           width={172}
           height={189}
         />
       </motion.div>
-      <motion.div className="absolute top-[152] left-[40]">
+      <motion.div className="absolute top-64 left-[40]">
         <h1 className="text-white text-[48px] font-semibold w-[252] h-[177]">
           Meet Your Forever Friend
         </h1>
