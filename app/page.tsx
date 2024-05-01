@@ -15,21 +15,21 @@ export default function Home() {
     <main className="relative">
       <motion.div>
         <Image
-          className="absolute top-36 right-36"
+          className="absolute top-[235px] right-[32px]"
           alt="Bay Max"
           src="/images/bmax.png"
           width={172}
           height={189}
         />
       </motion.div>
-      <motion.div className="absolute top-64 left-[40]">
-        <h1 className="text-white text-[48px] font-semibold w-[252] h-[177]">
+      <motion.div className="absolute top-[152px] left-[40px]">
+        <h1 className="text-white text-[48px] font-semibold w-[252px] h-[177px]">
           Meet Your Forever Friend
         </h1>
       </motion.div>
       <motion.div
         whileHover={{ scale: 1.03 }}
-        className="bg-gradient-to-b from-white to-gray-300 w-[200] h-[80] flex justify-center items-center absolute right-[16] top-[424] text-[24px] font-semibold text-customFontOrange"
+        className="bg-gradient-to-b from-white to-gray-300 w-[200px] h-[80px] flex justify-center items-center absolute right-[16px] top-[424px] text-[24px] font-semibold text-customFontOrange"
       >
         <Link href="/chat">
           <button>Get Started</button>
