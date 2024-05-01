@@ -13,7 +13,7 @@ export default function NavBar() {
           <motion.div
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="absolute top-[32] left-[24] sm:top-2 sm:left-4"
+            className="absolute top-[32px] left-[24px]"
           >
             <Image
               className="rounded-full"
@@ -24,7 +24,7 @@ export default function NavBar() {
             />
           </motion.div>
         </Link>
-        <motion.div className="absolute left-[80] top-[32] text-[32px] font-bold text-white">
+        <motion.div className="absolute left-[80px] top-[32px] text-[32px] font-bold text-white">
           Philo
         </motion.div>
 
@@ -37,7 +37,7 @@ export default function NavBar() {
         <motion.div
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          className="absolute right-[24] top-[44]"
+          className="absolute right-[24px] top-[44px]"
         >
           <Burger />
         </motion.div>

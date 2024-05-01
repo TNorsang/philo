@@ -29,9 +29,9 @@ export default function Chat() {
       <div>
         <div
           ref={ref}
-          className="w-screen h-[456] overflow-y-auto p-2 bg-gray-300 bg-opacity-50 absolute top-[144]"
+          className="w-screen h-[456px] overflow-y-auto p-2 bg-gray-300 bg-opacity-50 absolute top-[144px]"
         >
-          {error && <div className="text-sm ">{error.message}</div>}
+          {error && <div className="text-sm">{error.message}</div>}
           {messages.map((m, index) => (
             <div key={index} className="whitespace-pre-wrap p-2">
               {m.role === 'user' ? (
@@ -55,13 +55,13 @@ export default function Chat() {
         <form onSubmit={handleSubmit} className="">
           <Button
             children={{
-              className: 'mt-2 absolute top-[528] right-[72]',
+              className: 'mt-2 absolute top-[528px] right-[72px]',
               type: 'submit',
               disabled: isLoading,
             }}
           />
           <textarea
-            className="absolute w-[334] h-[56] top-[522] ml-[48] border p-2 mb-8 rounded-full shadow-xl resize-none"
+            className="absolute w-[334px] h-[56px] top-[522px] ml-[48px] border p-2 mb-8 rounded-full shadow-xl resize-none"
             value={input}
             placeholder="Let's Talk!"
             onChange={handleInputChange}
