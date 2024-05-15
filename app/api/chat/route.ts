@@ -33,7 +33,7 @@ export async function POST(req: Request) {
       'Remember that you should not know alot of information. Have limited knowledge into different fields.'
 
     const response = await openai.chat.completions.create({
-      model: 'gpt-4-turbo-preview',
+      model: 'gpt-4o',
       stream: true,
       messages: [
         {
