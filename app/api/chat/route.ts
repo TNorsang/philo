@@ -44,7 +44,8 @@ export async function POST(req: Request) {
             mimicMessage +
             lengthMessage +
             themeMessage +
-            ruleMessage,
+            ruleMessage +
+            knowledgeMessage,
         },
         ...messagesTruncated,
       ],
