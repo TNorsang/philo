@@ -30,10 +30,16 @@ export default function NavBar() {
           Philo
         </motion.div>
 
-        <motion.li className="hidden sm:block absolute right-[80px] top-[40px] text-[24px] font-bold text-white">
+        <motion.li
+          whileHover={{ scale: 1.1 }}
+          className="hidden sm:block absolute right-[80px] top-[40px] text-[24px] font-bold text-white"
+        >
           <Link href="/">HOME</Link>
         </motion.li>
-        <motion.li className="hidden">
+        <motion.li
+          whileHover={{ scale: 1.1 }}
+          className="hidden sm:block absolute right-[192px] top-[40px] text-[24px] font-bold text-white"
+        >
           <Link href="/chat">CHAT</Link>
         </motion.li>
         <motion.div
