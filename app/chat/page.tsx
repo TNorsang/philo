@@ -11,14 +11,7 @@ export default function Chat() {
 
   const { messages, input, handleInputChange, handleSubmit, isLoading, error } =
     useChat()
-  // useEffect(() => {
-  //   append({
-  //     content: 'Answer me with 3 words only',
-  //     role: 'user',
-  //   })
-  // }, [])
   useEffect(() => {
-    // Automatically scroll to the bottom whenever the messages update
     console.log(messages)
     if (ref.current === null) return
     ref.current.scrollTo(0, ref.current.scrollHeight)
