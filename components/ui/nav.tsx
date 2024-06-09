@@ -4,8 +4,10 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import Burger from '../svgs/burger'
+import { useState } from 'react'
 
 export default function NavBar() {
+  const [hide, setHide] = useState(false)
   return (
     <nav className="flex text-white">
       <ul className="list-none">
@@ -28,7 +30,7 @@ export default function NavBar() {
           Philo
         </motion.div>
 
-        <motion.li className="hidden">
+        <motion.li className="hidden sm:block absolute right-[80px] top-[40px] text-[24px] font-bold text-white">
           <Link href="/">HOME</Link>
         </motion.li>
         <motion.li className="hidden">
