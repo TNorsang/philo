@@ -7,7 +7,12 @@ import Burger from '../svgs/burger'
 import { useState } from 'react'
 
 export default function NavBar() {
-  const [hide, setHide] = useState(false)
+  const [show, setShow] = useState(false)
+
+  const handleClick = () => {
+    setShow(!show)
+  }
+
   return (
     <nav className="flex text-white">
       <ul className="list-none">
@@ -42,12 +47,29 @@ export default function NavBar() {
         >
           <Link href="/chat">CHAT</Link>
         </motion.li>
+        <motion.li
+          whileHover={{ scale: 1.1 }}
+          className="hidden sm:block absolute right-[296px] top-[40px] text-[24px] font-bold text-white"
+        >
+          <Link href="/signin">SIGN IN</Link>
+        </motion.li>
         <motion.div
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           className="absolute right-[24px] top-[44px]"
         >
-          <Burger />
+          <button onClick={handleClick} className="sm:hidden">
+            {show ? (
+              <>
+                <Link href="/signin">SIGN IN</Link>
+                {' | '}
+                <Link href="/chat">CHAT</Link> {' | '}{' '}
+                <Link href="/">HOME</Link>
+              </>
+            ) : (
+              <Burger />
+            )}
+          </button>
         </motion.div>
       </ul>
     </nav>
