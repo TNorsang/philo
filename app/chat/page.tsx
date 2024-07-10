@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from 'react'
 import { useChat } from 'ai/react'
 // import Button from '@/components/ui/Button'
 import { FaceSmileIcon, UserIcon } from '@heroicons/react/24/outline'
-import RobotSVG from '@/components/ui/Robot'
+// import RobotSVG from '@/components/ui/Robot'
 
 export default function Chat() {
   const ref = useRef<HTMLDivElement>(null)
