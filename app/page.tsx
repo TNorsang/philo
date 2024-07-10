@@ -8,9 +8,9 @@ import Link from 'next/link'
 import Cursor from '@/components/ui/Cursor'
 
 export default function Home() {
-  const PhiloModel = dynamic(() => import('../components/ui/PhiloModel'), {
-    ssr: false,
-  })
+  // const PhiloModel = dynamic(() => import('../components/ui/PhiloModel'), {
+  //   ssr: false,
+  // })
 
   return (
     <main className="relative h-screen overflow-hidden">
