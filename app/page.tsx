@@ -5,14 +5,16 @@ import { motion } from 'framer-motion'
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import Link from 'next/link'
+import Cursor from '@/components/ui/Cursor'
 
 export default function Home() {
-  const PhiloModel = dynamic(() => import('../components/ui/philoModel'), {
+  const PhiloModel = dynamic(() => import('../components/ui/PhiloModel'), {
     ssr: false,
   })
 
   return (
-    <main className="relative">
+    <main className="relative h-screen overflow-hidden">
+      <Cursor />
       <motion.div>
         <Image
           className="absolute top-[235px] sm:top-[264px] right-[32px] sm:right-[312px] sm:w-[313px] sm:h-[344px]"
@@ -35,6 +37,9 @@ export default function Home() {
           <button>Get Started</button>
         </Link>
       </motion.div>
+      <h1 className="text-white text-[24px] font-semibold absolute w-full bottom-0 flex justify-center items-center underline">
+        Site Under Development
+      </h1>
       {/* <PhiloModel /> */}
     </main>
   )

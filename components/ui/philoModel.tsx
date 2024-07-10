@@ -5,7 +5,7 @@ import { OrbitControls, useGLTF } from '@react-three/drei'
 import dynamic from 'next/dynamic'
 
 const PhiloModel = () => {
-  const My3DModel = dynamic(() => import('../../components/ui/philoModel'), {
+  const My3DModel = dynamic(() => import('./PhiloModel'), {
     ssr: false,
   }) // Client-side rendering
   const { scene } = useGLTF('/models/baymax.glb')
