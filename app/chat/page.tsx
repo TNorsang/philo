@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef } from 'react'
 import { useChat } from 'ai/react'
-// import Button from '@/components/ui/Button'
+import Button from '@/components/ui/Button'
 
 export default function Chat() {
   const ref = useRef<HTMLDivElement>(null)
@@ -64,13 +64,13 @@ export default function Chat() {
               paddingTop: 'calc(6% - 0.5em)',
             }}
           ></textarea>
-          {/* <Button
+          <Button
             children={{
               className: 'relative top-[88px] left-[296px]',
               type: 'submit',
               disabled: isLoading,
             }}
-          /> */}
+          />
         </form>
       </div>
     </section>
