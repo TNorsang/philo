@@ -6,7 +6,7 @@ const Cursor = () => {
 
   const greetings = [
     "Hi Friend! I'm Philo :)",
-    "Let's talk?",
+    'My Nephew Padma is sooo CUTE! <3',
     'Philo = Friendship :)',
     'Hello there!',
     'Greetings!',
@@ -52,11 +52,11 @@ const Cursor = () => {
         }}
       >
         <div
-          className="relative px-4 py-3 text-sm whitespace-nowrap"
+          className="cursor relative px-4 py-3 text-sm whitespace-nowrap"
           style={{
             transition: 'all 0.3s ease-in-out',
             opacity: currentGreeting ? 1 : 0,
-            background: 'linear-gradient(135deg, #FFD580, #98FB98)',
+            background: `linear-gradient(135deg, #FFD580, #98FB98)`,
             clipPath:
               'polygon(0 0, 100% 0, 100% 100%, 15px 100%, 0 calc(100% - 15px))',
             boxShadow: '0 4px 15px rgba(0, 0, 0, 0.1)',
@@ -85,8 +85,8 @@ const Cursor = () => {
                 x2="100%"
                 y2="100%"
               >
-                <stop offset="0%" stopColor="#000000" />
-                <stop offset="100%" stopColor="#444444" />
+                <stop offset="0%" stopColor="#f56b13" />
+                <stop offset="100%" stopColor="#f56b13" />
               </linearGradient>
             </defs>
           </svg>

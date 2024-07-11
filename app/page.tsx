@@ -10,11 +10,13 @@ import Cursor from '@/components/ui/Cursor'
 export default function Home() {
   // const PhiloModel = dynamic(() => import('../components/ui/PhiloModel'), {
   //   ssr: false,
-  // })
+  // })git
 
   return (
     <main className="relative h-screen overflow-hidden">
-      <Cursor />
+      <div>
+        <Cursor />
+      </div>
       <motion.div>
         <Image
           className="absolute top-[235px] sm:top-[264px] right-[32px] sm:right-[312px] sm:w-[313px] sm:h-[344px]"
