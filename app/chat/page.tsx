@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef } from 'react'
 import { useChat } from 'ai/react'
-import Button from '@/components/ui/Button'
+import Button from '@/components/ui/button'
 
 export default function Chat() {
   const ref = useRef<HTMLDivElement>(null)
