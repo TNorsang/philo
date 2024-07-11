@@ -8,7 +8,6 @@ import { useState } from 'react'
 
 export default function NavBar() {
   const [show, setShow] = useState(false)
-
   const handleClick = () => {
     setShow(!show)
   }
