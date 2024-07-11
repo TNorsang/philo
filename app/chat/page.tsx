@@ -64,13 +64,13 @@ export default function Chat() {
               paddingTop: 'calc(6% - 0.5em)',
             }}
           ></textarea>
-          <Button
+          {/* <Button
             children={{
               className: 'relative top-[88px] left-[296px]',
               type: 'submit',
               disabled: isLoading,
             }}
-          />
+          /> */}
         </form>
       </div>
     </section>
