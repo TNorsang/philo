@@ -18,7 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <NavBar />
+        <div className="relative z-50">
+          <NavBar />
+        </div>
         <div>{children}</div>
       </body>
       <div></div>

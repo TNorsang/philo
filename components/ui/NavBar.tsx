@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-// import Burger from '../svgs/Burger'
+import Burger from '../svgs/burger'
 import { useState } from 'react'
 
 export default function NavBar() {
@@ -67,8 +67,7 @@ export default function NavBar() {
                 <Link href="/">HOME</Link>
               </>
             ) : (
-              // <Burger />
-              'Test'
+              <Burger />
             )}
           </button>
         </motion.div>

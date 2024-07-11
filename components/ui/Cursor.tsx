@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
 
 const Cursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 })
@@ -6,7 +7,6 @@ const Cursor = () => {
 
   const greetings = [
     "Hi Friend! I'm Philo :)",
-    'My Nephew Padma is sooo CUTE! <3',
     'Philo = Friendship :)',
     'Hello there!',
     'Greetings!',
@@ -28,7 +28,7 @@ const Cursor = () => {
     }
 
     window.addEventListener('mousemove', updatePosition)
-    const intervalId = setInterval(changeGreeting, 7000) // Change greeting every 3 seconds
+    const intervalId = setInterval(changeGreeting, 7000) // Change greeting every 7 seconds
 
     changeGreeting() // Set initial greeting
 
@@ -39,28 +39,32 @@ const Cursor = () => {
   }, [])
 
   return (
-    <div
-      className="cursorbg relative w-full h-screen overflow-hidden"
+    <motion.div
+      className="fixed top-0 left-0 w-full h-full z-50"
       style={{ cursor: 'none' }}
     >
-      <div
-        className="absolute pointer-events-none"
+      <motion.div
+        className="absolute"
         style={{
-          left: `${position.x}px`,
-          top: `${position.y}px`,
-          transform: 'translate(-2px, -2px)',
+          left: position.x,
+          top: position.y,
+          x: '1%',
+          y: '1%',
         }}
+        transition={{ type: 'spring', stiffness: 500, damping: 28 }}
       >
-        <div
+        <motion.div
           className="cursor relative px-4 py-3 text-sm whitespace-nowrap"
           style={{
-            transition: 'all 0.3s ease-in-out',
             opacity: currentGreeting ? 1 : 0,
             background: `linear-gradient(135deg, #FFD580, #98FB98)`,
             clipPath:
               'polygon(0 0, 100% 0, 100% 100%, 15px 100%, 0 calc(100% - 15px))',
             boxShadow: '0 4px 15px rgba(0, 0, 0, 0.1)',
           }}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: currentGreeting ? 1 : 0, scale: 1 }}
+          transition={{ duration: 0.3 }}
         >
           <span
             style={{
@@ -90,9 +94,9 @@ const Cursor = () => {
               </linearGradient>
             </defs>
           </svg>
-        </div>
-      </div>
-    </div>
+        </motion.div>
+      </motion.div>
+    </motion.div>
   )
 }
 
