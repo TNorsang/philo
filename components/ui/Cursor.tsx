@@ -48,7 +48,7 @@ const Cursor = () => {
         style={{
           left: `${position.x}px`,
           top: `${position.y}px`,
-          transform: 'translate(-2px, -2px)', // Align top-left corner with cursor
+          transform: 'translate(-2px, -2px)',
         }}
       >
         <div
