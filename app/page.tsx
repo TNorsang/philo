@@ -9,6 +9,7 @@ import FriendlyLandingPage from '@/components/ui/LandingPage'
 
 export default function Home() {
   const [showCursor, setShowCursor] = useState(false)
+  const [signedIn, setSignedIn] = useState(false)
 
   useEffect(() => {
     const handleResize = () => {
@@ -57,7 +58,7 @@ export default function Home() {
             whileHover={{ scale: 1.03 }}
             className="bg-gradient-to-b from-white to-gray-300 w-[200px] h-[80px] flex justify-center items-center right-[16px] sm:right-[368px] top-[424px] sm:top-[608px] text-[24px] font-semibold text-customFontOrange z-50"
           >
-            <Link href="/chat">
+            <Link href={signedIn ? '/chat' : '/signin'}>
               <button>Get Started</button>
             </Link>
           </motion.div>
