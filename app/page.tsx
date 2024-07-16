@@ -34,7 +34,7 @@ export default function Home() {
       <div className="relative z-10">{showCursor && <Cursor />}</div>
       <motion.div className="flex">
         <motion.div className="top-[152px] left-[40px] sm:left-[368px] sm:top-[184px] z-20">
-          <h1 className="text-white text-[48px] font-semibold w-[252px] h-[177px] sm:text-[88px] sm:w-[464px] sm:h-[304px]">
+          <h1 className="text-white text-[48px] font-semibold w-[252px] h-[177px] md:text-[88px] md:w-[464px] md:h-[304px]">
             Meet Your Forever Friend
           </h1>
         </motion.div>
@@ -45,7 +45,7 @@ export default function Home() {
             transition={{ duration: 4 }}
           >
             <Image
-              className="top-[235px] sm:top-[264px] right-[32px] sm:right-[312px] sm:w-[313px] sm:h-[344px]"
+              className="top-[235px] right-[32px] md:top-[264px] md:right-[312px] md:w-[313px] md:h-[344px]"
               alt="Bay Max"
               src="/images/bmax.png"
               width={172}
