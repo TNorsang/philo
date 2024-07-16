@@ -53,18 +53,17 @@ export default function Home() {
               height={189}
             />
           </motion.div>
-
-          <motion.div
-            whileHover={{ scale: 1.02 }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1.02 }}
-            className="bg-gradient-to-b from-white to-gray-300 w-[170px] h-[60px] flex justify-center items-center right-[16px] top-[424px] sm:right-[368px] sm:top-[608px] text-[20px] font-semibold text-customFontOrange z-50"
-          >
-            <Link href={signedIn ? '/chat' : '/signup'}>
+          <Link className="z-50" href={signedIn ? '/chat' : '/signup'}>
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1.02 }}
+              className="bg-gradient-to-b from-white to-gray-300 w-[170px] h-[60px] flex justify-center items-center right-[16px] top-[424px] sm:right-[368px] sm:top-[608px] text-[20px] font-semibold text-customFontOrange "
+            >
               <button>Get Started</button>
-            </Link>
-          </motion.div>
+            </motion.div>
+          </Link>
         </motion.div>
       </motion.div>
       <h1 className="text-white text-[24px] font-semibold absolute w-full bottom-0 flex justify-center items-center underline">
