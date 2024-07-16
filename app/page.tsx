@@ -6,6 +6,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Cursor from '@/components/ui/Cursor'
 import FriendlyLandingPage from '@/components/ui/LandingPage'
+import CloudWeatherBackground from '@/components/ui/Cloud'
+import { Cloud } from 'lucide-react'
 
 export default function Home() {
   const [showCursor, setShowCursor] = useState(false)
@@ -32,6 +34,7 @@ export default function Home() {
   return (
     <main className="relative flex justify-center items-center w-screen h-screen overflow-hidden">
       {/* <FriendlyLandingPage /> */}
+      <CloudWeatherBackground />
       <div className="relative z-10">{showCursor && <Cursor />}</div>
       <motion.div className="flex">
         <motion.div className="top-[152px] left-[40px] sm:left-[368px] sm:top-[184px] z-20">
