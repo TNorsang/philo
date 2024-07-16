@@ -33,13 +33,13 @@ export default function Home() {
     <main className="relative flex justify-center items-center w-screen h-screen overflow-hidden">
       {/* <FriendlyLandingPage /> */}
       <div className="relative z-10">{showCursor && <Cursor />}</div>
-      <motion.div className="flex">
+      <motion.div className="flex border-4">
         <motion.div className="top-[152px] left-[40px] sm:left-[368px] sm:top-[184px] z-20">
-          <h1 className="text-white text-[48px] font-semibold w-[252px] h-[177px] md:text-[88px] md:w-[464px] md:h-[304px]">
+          <h1 className="text-white text-[48px] font-semibold w-[252px] h-[177px] md:text-[88px] md:w-[464px] md:h-[304px] relative left-12">
             Meet Your Forever Friend
           </h1>
         </motion.div>
-        <motion.div className="flex flex-col items-center">
+        <motion.div className="flex flex-col items-center relative right-5">
           <motion.div
             initial={{ opacity: 0, y: -100 }}
             animate={{ opacity: 1, y: 0 }}
