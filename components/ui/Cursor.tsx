@@ -54,12 +54,9 @@ const Cursor = () => {
         transition={{ type: 'spring', stiffness: 500, damping: 28 }}
       >
         <motion.div
-          className="cursor relative px-4 py-3 text-sm whitespace-nowrap"
+          className="text-white ml-[8px] bg-customOrange p-[16px] rounded-2xl text-[16px] mr-[16px]"
           style={{
             opacity: currentGreeting ? 1 : 0,
-            background: `linear-gradient(135deg, #FFD580, #98FB98)`,
-            clipPath:
-              'polygon(0 0, 100% 0, 100% 100%, 15px 100%, 0 calc(100% - 15px))',
             boxShadow: '0 4px 15px rgba(0, 0, 0, 0.1)',
           }}
           initial={{ opacity: 0, scale: 0.8 }}
@@ -77,7 +74,7 @@ const Cursor = () => {
           </span>
           <svg
             className="absolute"
-            style={{ top: '-2px', left: '-2px', width: '16px', height: '16px' }}
+            style={{ top: '0px', left: '4px', width: '15px', height: '10px' }}
             viewBox="0 0 16 16"
           >
             <path d="M0 0 L16 0 L0 16 Z" fill="url(#cursorGradient)" />
@@ -89,8 +86,8 @@ const Cursor = () => {
                 x2="100%"
                 y2="100%"
               >
-                <stop offset="0%" stopColor="#f56b13" />
-                <stop offset="100%" stopColor="#f56b13" />
+                <stop offset="0%" stopColor="#ffffff" />
+                <stop offset="100%" stopColor="#ff863b" />
               </linearGradient>
             </defs>
           </svg>
