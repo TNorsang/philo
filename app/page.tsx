@@ -5,10 +5,7 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import Cursor from '@/components/ui/Cursor'
-import FriendlyLandingPage from '@/components/ui/LandingPage'
 import CloudWeatherBackground from '@/components/ui/Cloud'
-import { Cloud } from 'lucide-react'
-import { openAsBlob } from 'fs'
 
 export default function Home() {
   const [showCursor, setShowCursor] = useState(false)
@@ -64,7 +61,7 @@ export default function Home() {
             transition={{ duration: 1.02 }}
             className="bg-gradient-to-b from-white to-gray-300 w-[170px] h-[60px] flex justify-center items-center right-[16px] top-[424px] sm:right-[368px] sm:top-[608px] text-[20px] font-semibold text-customFontOrange z-50"
           >
-            <Link href={signedIn ? '/chat' : '/signin'}>
+            <Link href={signedIn ? '/chat' : '/signup'}>
               <button>Get Started</button>
             </Link>
           </motion.div>

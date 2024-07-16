@@ -6,13 +6,13 @@ const Cursor = () => {
   const [currentGreeting, setCurrentGreeting] = useState('')
 
   const greetings = [
-    "Hi Friend! I'm Philo :)",
+    "Hey! I'm Philo :)",
     'Philo = Friendship :)',
     'Hello there!',
     'Greetings!',
     'Welcome!',
     'Nice to meet you!',
-    'Philo says hi!',
+    'Pretty Cloudy Today!',
     'Friendship awaits!',
   ]
 
