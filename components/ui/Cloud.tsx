@@ -37,7 +37,6 @@ const Cloud: React.FC<CloudProps> = ({ delay, duration, scale, top, left }) => {
         position: 'absolute',
         top,
         left,
-        transform: `scale(${scale})`,
       }}
     />
   )
