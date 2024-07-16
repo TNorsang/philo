@@ -6,7 +6,7 @@ export default function SignUp() {
   const [user, setUser] = useState({ username: '', email: '', password: '' })
 
   // handle inputChange : So every time a user types within the input field it should add it to the useState
-  const handleInput = (e) => {
+  const handleInput = (e: any) => {
     const { name, value } = e.target
     setUser({ ...user, [name]: value })
   }
