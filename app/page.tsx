@@ -1,21 +1,35 @@
 'use client'
 
-import React, { useState, Suspense } from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import Cursor from '@/components/ui/Cursor'
 
 export default function Home() {
-  // const PhiloModel = dynamic(() => import('../components/ui/PhiloModel'), {
-  //   ssr: false,
-  // })git
+  const [showCursor, setShowCursor] = useState(false)
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setShowCursor(true)
+      } else {
+        setShowCursor(false)
+      }
+    }
+
+    handleResize()
+
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
 
   return (
     <main className="relative h-screen overflow-hidden">
-      <div className="relative z-10">
-        <Cursor />
-      </div>
+      <div className="relative z-10">{showCursor && <Cursor />}</div>
       <motion.div>
         <Image
           className="absolute top-[235px] sm:top-[264px] right-[32px] sm:right-[312px] sm:w-[313px] sm:h-[344px]"
