@@ -9,46 +9,50 @@ interface CloudProps {
   left: string
 }
 
-const Cloud: React.FC<CloudProps> = ({ delay, duration, scale, top, left }) => {
-  const controls: AnimationControls = useAnimation()
+const Cloud: React.FC<CloudProps> = React.memo(
+  ({ delay, duration, scale, top, left }) => {
+    const controls: AnimationControls = useAnimation()
 
-  useEffect(() => {
-    const animateCloud = async () => {
-      while (true) {
-        const newDuration = duration * (Math.random() * 0.5 + 0.75) // 75% to 125% of original duration
-        await controls.start({
-          x: '100%',
-          transition: { duration: newDuration, ease: 'linear' },
-        })
-        await controls.set({ x: '-100%' })
+    useEffect(() => {
+      // console.log('component mounted')
+      const animateCloud = async () => {
+        await new Promise((resolve) => requestAnimationFrame(resolve))
+        while (true) {
+          await controls.start({
+            x: '100%',
+            transition: { duration, ease: 'linear' },
+          })
+          await controls.set({ x: '-100%' })
+        }
       }
-    }
 
-    animateCloud()
+      animateCloud()
 
-    // Clean up function to stop animation when component unmounts
-    return () => {
-      controls.stop() // Stop any ongoing animations
-    }
-  }, [controls, duration])
+      // Clean up function to stop animation when component unmounts
+      return () => {
+        // console.log('component unmounted')
+        controls.stop() // Stop any ongoing animations
+      }
+    }, [controls, duration])
 
-  return (
-    <motion.path
-      d="M0,60 a20,20 0 0,1 0,-40 a20,20 0 0,1 40,0 a20,20 0 0,1 40,0 a20,20 0 0,1 0,40 z"
-      fill="rgba(255, 255, 255, 0.8)"
-      initial={{ x: '-100%' }}
-      animate={controls}
-      style={{
-        position: 'absolute',
-        top,
-        left,
-        scale,
-      }}
-    />
-  )
-}
+    return (
+      <motion.path
+        d="M0,60 a20,20 0 0,1 0,-40 a20,20 0 0,1 40,0 a20,20 0 0,1 40,0 a20,20 0 0,1 0,40 z"
+        fill="rgba(255, 255, 255, 0.8)"
+        initial={{ x: '-100%' }}
+        animate={controls}
+        style={{
+          position: 'absolute',
+          top,
+          left,
+          scale,
+        }}
+      />
+    )
+  },
+)
 
-const CloudWeatherBackground: React.FC = () => {
+const CloudWeatherBackground: React.FC = React.memo(() => {
   return (
     <div className="fixed inset-0 overflow-hidden">
       <svg
@@ -78,6 +82,6 @@ const CloudWeatherBackground: React.FC = () => {
       ></motion.div>
     </div>
   )
-}
+})
 
 export default CloudWeatherBackground

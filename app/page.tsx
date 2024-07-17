@@ -31,7 +31,7 @@ export default function Home() {
 
   return (
     <main className="relative flex justify-center items-center w-screen h-screen overflow-hidden">
-      <CloudWeatherBackground />
+      {/* <CloudWeatherBackground /> */}
       <div className="relative z-10">{showCursor && <Cursor />}</div>
       <motion.div className="flex">
         <motion.div className="top-[152px] left-[40px] sm:left-[368px] sm:top-[184px] z-20">
