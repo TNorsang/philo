@@ -4,14 +4,22 @@
 
 @layer utilities {
   body {
-    background: linear-gradient(-45deg, #f56b13, #f9941c, #81f1c9);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
+    background: linear-gradient(
+      -45deg,
+      #2584c7,
+      #52a0d7,
+      #81f1c9,
+      #1eb983,
+      #f56b13,
+      #f9941c,
+      #f9941c
+    );
+    background-size: 800% 800%; /* Increase size for longer animation */
+    animation: gradient 100s ease infinite; /* Increase duration to 30s */
     height: 100vh;
   }
   .cursor {
     background: linear-gradient(-45deg, #f56b13, #f9941c, #81f1c9);
-
     animation: gradient 15s ease infinite;
   }
 
