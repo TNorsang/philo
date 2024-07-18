@@ -6,16 +6,15 @@
   body {
     background: linear-gradient(
       -45deg,
-      #2584c7,
-      #52a0d7,
-      #81f1c9,
-      #1eb983,
+      #0a81bd,
+      #3296c8,
+      #a5a5a5,
       #f56b13,
       #f9941c,
       #f9941c
     );
     background-size: 800% 800%; /* Increase size for longer animation */
-    animation: gradient 100s ease infinite; /* Increase duration to 30s */
+    animation: gradient 30s ease infinite; /* Increase duration to 30s */
     height: 100vh;
   }
   .cursor {

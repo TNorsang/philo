@@ -59,7 +59,7 @@ export default function Home() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1.02 }}
-              className="bg-gradient-to-b from-white to-gray-300 w-[170px] h-[60px] flex justify-center items-center right-[16px] top-[424px] sm:right-[368px] sm:top-[608px] text-[20px] font-semibold text-customFontOrange "
+              className="bg-gradient-to-b from-white to-gray-300 w-[170px] h-[60px] flex justify-center items-center right-[16px] top-[424px] sm:right-[368px] sm:top-[608px] text-[20px] font-semibold text-customFontOrange"
             >
               <button>Get Started</button>
             </motion.div>

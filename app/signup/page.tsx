@@ -5,24 +5,28 @@ import { useState } from 'react'
 export default function SignUp() {
   const [user, setUser] = useState({ username: '', email: '', password: '' })
 
-  // handle inputChange : So every time a user types within the input field it should add it to the useState
-  const handleInput = (e: any) => {
+  const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
-    setUser({ ...user, [name]: value })
+    setUser((prevUser) => ({ ...prevUser, [name]: value }))
   }
 
-  // handle Sign Up
   const handleSignUp = async () => {
-    const res = await fetch('/api/signup', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(user),
-    })
-    if (res.ok) {
-      alert('User Created Successfully!')
-    } else {
+    try {
+      const res = await fetch('/api/users', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(user),
+      })
+
+      if (res.ok) {
+        alert('User Created Successfully!')
+      } else {
+        alert('Error Creating User!')
+      }
+    } catch (error) {
+      console.error('Error:', error)
       alert('Error Creating User!')
     }
   }
@@ -34,6 +38,7 @@ export default function SignUp() {
           className="w-5/12 rounded-full h-[56px] border-4 p-4 shadow-xl text-[16px] mb-4"
           type="text"
           placeholder="Username"
+          name="username"
           value={user.username}
           onChange={handleInput}
         />
@@ -41,6 +46,7 @@ export default function SignUp() {
           className="w-5/12 h-[56px] p-4 mb-4 rounded-full border-4 shadow-xl text-[16px]"
           type="text"
           placeholder="Email"
+          name="email"
           value={user.email}
           onChange={handleInput}
         />
@@ -48,6 +54,7 @@ export default function SignUp() {
           className="w-5/12 h-[56px] p-4 mb-4 rounded-full border-4 shadow-xl text-[16px]"
           type="password"
           placeholder="Password"
+          name="password"
           value={user.password}
           onChange={handleInput}
         />
