@@ -1,6 +1,6 @@
+import { NextApiRequest, NextApiResponse } from 'next'
 import { PrismaClient } from '@prisma/client'
 import bcrypt from 'bcrypt'
-import { NextApiRequest, NextApiResponse } from 'next'
 
 const prisma = new PrismaClient()
 
@@ -11,6 +11,7 @@ export default async function handler(
   if (req.method === 'POST') {
     const { username, email, password } = req.body
 
+    // Hash the password
     const hashedPassword = await bcrypt.hash(password, 10)
 
     try {
@@ -23,9 +24,10 @@ export default async function handler(
       })
       res.status(200).json(user)
     } catch (error) {
-      res.status(500).json({ error: 'User already exists or other error' })
+      res.status(500).json({ error: 'Error creating user' })
     }
   } else {
-    res.status(405).json({ error: 'Method not allowed' })
+    res.setHeader('Allow', ['POST'])
+    res.status(405).end(`Method ${req.method} Not Allowed`)
   }
 }
