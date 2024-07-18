@@ -9,6 +9,7 @@ export default function Chat() {
 
   const { messages, input, handleInputChange, handleSubmit, isLoading, error } =
     useChat()
+
   useEffect(() => {
     if (ref.current === null) return
     ref.current.scrollTo(0, ref.current.scrollHeight)
@@ -17,7 +18,14 @@ export default function Chat() {
   const handleEnterKeyDown = (
     event: React.KeyboardEvent<HTMLTextAreaElement>,
   ) => {
-    if (event.key === 'Enter') handleSubmit(event)
+    if (event.key === 'Enter') {
+      event.preventDefault()
+      const syntheticEvent = new Event('submit', {
+        bubbles: true,
+        cancelable: true,
+      })
+      event.currentTarget.form?.dispatchEvent(syntheticEvent)
+    }
   }
 
   return (
@@ -25,7 +33,7 @@ export default function Chat() {
       <div className="flex flex-col items-center">
         <div
           ref={ref}
-          className="w-screen h-[472px] overflow-y-scroll overflow-x-hidden  bg-gray-300 bg-opacity-50 relative top-[144px] flex flex-col items-center p-[16px]"
+          className="w-screen h-[472px] overflow-y-scroll overflow-x-hidden bg-gray-300 bg-opacity-50 relative top-[144px] flex flex-col items-center p-[16px]"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {error && <div className="text-sm">{error.message}</div>}
