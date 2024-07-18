@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 
 export default function SignUp() {
   const [user, setUser] = useState({ username: '', email: '', password: '' })
@@ -64,9 +65,12 @@ export default function SignUp() {
         >
           Sign Up
         </button>
-        <button className="w-5/12 h-[48px] bg-customOrange text-white rounded-2xl text-[16px] shadow-xl">
-          Sign In
-        </button>
+        <Link
+          href={'/signin'}
+          className="flex justify-center w-5/12 h-[48px] bg-customOrange text-white rounded-2xl text-[16px] shadow-xl"
+        >
+          <button>Sign In</button>
+        </Link>
       </div>
     </div>
   )
