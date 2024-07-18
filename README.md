@@ -2,7 +2,7 @@
 
 ## Developer : Norsang Nyandak
 
-## Prisma:
+### Things to know
 
 ### Install Prisma
 
