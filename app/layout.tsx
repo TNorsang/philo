@@ -22,6 +22,11 @@ export default function RootLayout({
           <NavBar />
         </div>
         <div>{children}</div>
+        <div>
+          <h1 className="text-white text-[18px] font-semibold absolute w-full bottom-0 flex justify-center items-center underline">
+            Site Under Maintenance: Some features are currently unavailable.
+          </h1>
+        </div>
       </body>
     </html>
   )

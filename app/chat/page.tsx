@@ -10,10 +10,15 @@ export default function Chat() {
   const { messages, input, handleInputChange, handleSubmit, isLoading, error } =
     useChat()
   useEffect(() => {
-    console.log(messages)
     if (ref.current === null) return
     ref.current.scrollTo(0, ref.current.scrollHeight)
   }, [messages])
+
+  const handleEnterKeyDown = (
+    event: React.KeyboardEvent<HTMLTextAreaElement>,
+  ) => {
+    if (event.key === 'Enter') handleSubmit(event)
+  }
 
   return (
     <section className="">
@@ -54,6 +59,7 @@ export default function Chat() {
             value={input}
             placeholder="Say Something to Philo :)"
             onChange={handleInputChange}
+            onKeyDown={handleEnterKeyDown}
             rows={2}
             style={{
               display: 'flex',
@@ -66,7 +72,7 @@ export default function Chat() {
           ></textarea>
           <Button
             children={{
-              className: 'relative top-[88px] left-[296px]',
+              className: 'relative top-[79px] left-[289px]',
               type: 'submit',
               disabled: isLoading,
             }}

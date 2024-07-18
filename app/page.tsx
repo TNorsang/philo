@@ -66,9 +66,7 @@ export default function Home() {
           </Link>
         </motion.div>
       </motion.div>
-      <h1 className="text-white text-[24px] font-semibold absolute w-full bottom-0 flex justify-center items-center underline">
-        Site Under Development
-      </h1>
+
       {/* <PhiloModel /> */}
     </main>
   )
