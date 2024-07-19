@@ -1,5 +1,7 @@
 'use client'
 
+import Link from 'next/link'
+
 export default function SignInForm() {
   return (
     <div className="flex justify-center items-center min-h-screen bg-opacity-50">
@@ -17,9 +19,12 @@ export default function SignInForm() {
         <button className="w-5/12 h-[48px] bg-blue-500 text-white rounded-2xl text-[16px] shadow-xl">
           Sign In
         </button>
-        <button className="w-5/12 h-[48px] bg-customOrange text-white rounded-2xl text-[16px] shadow-xl">
-          Sign Up
-        </button>
+        <Link
+          href={'/signup'}
+          className="flex justify-center w-5/12 h-[48px] bg-customOrange text-white rounded-2xl text-[16px] shadow-xl"
+        >
+          <button>Sign Up</button>
+        </Link>
       </div>
     </div>
   )

@@ -2,8 +2,11 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 export default function SignUp() {
+  const router = useRouter()
+
   const [user, setUser] = useState({ username: '', email: '', password: '' })
   const [signedIn, setSignedIn] = useState(false)
 
@@ -25,6 +28,7 @@ export default function SignUp() {
       if (res.ok) {
         alert('User Created Successfully!')
         setSignedIn(true)
+        router.push('/chat')
       } else {
         alert('Error Creating User!')
       }
@@ -36,8 +40,12 @@ export default function SignUp() {
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-opacity-50">
-      {signedIn ? <h1> Welcome! {user.username} </h1> : <h1> </h1>}
       <div className="flex flex-col items-center gap-4 bg-opacity-50 bg-white p-8 rounded-lg shadow-lg w-full max-w-4xl">
+        {/* {signedIn ? (
+          <h1 className="text-3xl font-bold"> Welcome {user.username}!</h1>
+        ) : (
+          <h1> </h1>
+        )} */}
         <input
           className="w-5/12 rounded-full h-[56px] border-4 p-4 shadow-xl text-[16px] mb-4"
           type="text"
