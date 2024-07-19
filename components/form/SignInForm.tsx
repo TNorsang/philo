@@ -1,6 +1,6 @@
 'use client'
 
-export default function SignIn() {
+export default function SignInForm() {
   return (
     <div className="flex justify-center items-center min-h-screen bg-opacity-50">
       <div className="flex flex-col items-center gap-2 bg-opacity-50 bg-white p-8 rounded-lg shadow-lg w-full max-w-4xl">
