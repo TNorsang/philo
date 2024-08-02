@@ -24,7 +24,7 @@ export default function NavBar() {
           >
             <Image
               className="rounded-full"
-              src="/images/philo-logo.png"
+              src="/images/bmax_logo.png"
               alt="Logo"
               width={48}
               height={48}
