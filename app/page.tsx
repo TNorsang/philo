@@ -29,7 +29,7 @@ export default function Home() {
   }, [])
 
   return (
-    <main>
+    <main className="w-screen h-screen">
       {/* <CloudWeatherBackground /> */}
       <div className="relative z-10">{showCursor && <Cursor />}</div>
       <HeroSection signedIn={signedIn} />
