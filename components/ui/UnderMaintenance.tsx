@@ -21,7 +21,7 @@ export default function UnderMaintenance() {
     }
   }, [])
   return (
-    <div>
+    <div className="fixed bottom-0 w-full">
       {message ? (
         <h1 className="text-white text-[18px] font-semibold absolute w-full bottom-0 flex justify-center items-center underline">
           Site Under Maintenance: Some features are currently unavailable.

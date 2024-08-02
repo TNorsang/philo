@@ -19,10 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="relative z-50">
+        <div className="sticky top-0 z-50 ">
           <NavBar />
         </div>
-        <div>{children}</div>
+        <div className="overflow-y-hidden">{children}</div>
         <UnderMaintenance />
       </body>
     </html>
