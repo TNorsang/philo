@@ -80,7 +80,7 @@ export default function Chat() {
           ></textarea>
           <Button
             children={{
-              className: 'relative top-[79px] left-[289px]',
+              className: 'relative top-[88px] left-[292px]',
               type: 'submit',
               disabled: isLoading,
             }}
