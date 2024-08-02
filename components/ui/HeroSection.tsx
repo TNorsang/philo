@@ -7,7 +7,7 @@ import Image from 'next/image'
 export default function HeroSection({ signedIn }: { signedIn: boolean }) {
   return (
     <div className="flex items-center justify-center h-screen  overflow-hidden">
-      <motion.div className="relative flex items-center justify-center">
+      <motion.div className="relative flex items-center justify-center top-[-30px]">
         <motion.div className="z-20 relative left-[12px]">
           <h1 className="text-white font-semibold text-[30px] w-[150px] sm:text-[60px] sm:w-[300px] lg:text-[88px] lg:w-[450px]">
             Meet Your Forever Friend

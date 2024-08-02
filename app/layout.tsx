@@ -17,12 +17,12 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="h-screen">
+    <html lang="en">
       <body className={inter.className}>
         <div className="sticky top-0 z-50 ">
           <NavBar />
         </div>
-        <div className="overflow-y-hidden">{children}</div>
+        <div className="overflow-y-hidden ">{children}</div>
         <UnderMaintenance />
       </body>
     </html>
