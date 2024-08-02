@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import NavBar from '@/components/ui/NavBar'
+import UnderMaintenance from '@/components/ui/UnderMaintenance'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,11 +23,7 @@ export default function RootLayout({
           <NavBar />
         </div>
         <div>{children}</div>
-        <div>
-          <h1 className="text-white text-[18px] font-semibold absolute w-full bottom-0 flex justify-center items-center underline">
-            Site Under Maintenance: Some features are currently unavailable.
-          </h1>
-        </div>
+        <UnderMaintenance />
       </body>
     </html>
   )

@@ -6,6 +6,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Cursor from '@/components/ui/Cursor'
 import CloudWeatherBackground from '@/components/ui/Cloud'
+import UnderMaintenance from '@/components/ui/UnderMaintenance'
 
 export default function Home() {
   const [showCursor, setShowCursor] = useState(false)
@@ -65,6 +66,7 @@ export default function Home() {
             </motion.div>
           </Link>
         </motion.div>
+        {/* <UnderMaintenance /> */}
       </motion.div>
 
       {/* <PhiloModel /> */}
