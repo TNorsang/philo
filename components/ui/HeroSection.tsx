@@ -33,7 +33,7 @@ export default function HeroSection({ signedIn }: { signedIn: boolean }) {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1.02 }}
-              className="w-[111px] h-[44px] text-[16px] top-[-20px] md:top-[-20px] bg-gradient-to-b from-white to-gray-300 flex justify-center items-center mt-5  font-semibold text-customFontOrange relative"
+              className="text-[16px] w-[111px] h-[44px] lg:text-[24px] lg:w-[200px] lg:h-[60px] sm:text-[24px] sm:w-[200px] sm:h-[60px] top-[0px] bg-gradient-to-b from-white to-gray-300 flex justify-center items-center  font-semibold text-customFontOrange relative"
             >
               <button>Get Started</button>
             </motion.div>
