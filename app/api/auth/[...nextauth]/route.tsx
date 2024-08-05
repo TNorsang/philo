@@ -5,8 +5,10 @@ import { prisma } from '@/lib/db'
 
 const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID
 const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET
+const SECRET = process.env.SECRET
 
 const authOptions: NextAuthOptions = {
+  secret: SECRET,
   session: {
     strategy: 'jwt',
   },
@@ -25,17 +27,16 @@ const authOptions: NextAuthOptions = {
         where: { email: profile.email },
         create: {
           email: profile.email,
-          username: profile.name || profile.email, // Handle missing name
+          username: profile.name || profile.email,
           password: '',
         },
         update: {
-          username: profile.name || profile.email, // Handle missing name
+          username: profile.name || profile.email,
         },
       })
       return true
     },
     async session({ session, token }) {
-      // Ensure session.user is defined
       if (session.user) {
         session.user.id = token.id as number // Set user ID in session
       } else {
