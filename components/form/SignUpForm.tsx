@@ -5,16 +5,22 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
 export default function SignUp() {
+  // Handle Routing
   const router = useRouter()
 
+  // Setting up Object for user information
   const [user, setUser] = useState({ username: '', email: '', password: '' })
+
+  // Check if user is signed in or not
   const [signedIn, setSignedIn] = useState(false)
 
+  // Update Information based on live inputs
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
     setUser((prevUser) => ({ ...prevUser, [name]: value }))
   }
 
+  //
   const handleSignUp = async () => {
     try {
       const res = await fetch('/api/users', {

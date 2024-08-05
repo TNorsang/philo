@@ -38,11 +38,11 @@ const authOptions: NextAuthOptions = {
     },
     async session({ session, token }) {
       if (session.user) {
-        session.user.id = token.id as number // Set user ID in session
+        session.user.id = token.id as number
       } else {
         session.user = {
           id: token.id as number,
-          email: '', // Default values; should be properly set if necessary
+          email: '',
           name: '',
         }
       }
