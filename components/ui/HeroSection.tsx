@@ -3,8 +3,11 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
+import { useSession } from 'next-auth/react'
 
 export default function HeroSection({ signedIn }: { signedIn: boolean }) {
+  const { data: session } = useSession()
+  console.log(session)
   return (
     <div className="flex items-center justify-center h-screen  overflow-hidden">
       <motion.div className="relative flex items-center justify-center top-[-30px]">
@@ -35,7 +38,11 @@ export default function HeroSection({ signedIn }: { signedIn: boolean }) {
               transition={{ duration: 1.02 }}
               className="text-[13px] w-[92px] h-[40px] sm:text-[20px] sm:w-[140px] sm:h-[52px] lg:text-[24px] lg:w-[200px] lg:h-[60px]  top-[0px] bg-gradient-to-b from-white to-gray-300 flex justify-center items-center  font-semibold text-customFontOrange relative"
             >
-              <button>Get Started</button>
+              {session ? (
+                <button>Hi {session.user.name?.split(' ')[0]}!</button>
+              ) : (
+                <button>Get Started</button>
+              )}
             </motion.div>
           </Link>
         </motion.div>

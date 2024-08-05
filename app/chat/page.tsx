@@ -61,32 +61,32 @@ export default function Chat() {
             </div>
           ))}
         </div>
-        <form onSubmit={handleSubmit} className="w-[334px] h-[56px]">
-          <textarea
-            className="relative w-[334px] h-[56px] top-[160px] border-4 p-2 mb-8 rounded-full shadow-xl resize-none overflow-y-hidden"
-            value={input}
-            placeholder="Say Something to Philo :)"
-            onChange={handleInputChange}
-            onKeyDown={handleEnterKeyDown}
-            rows={2}
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              paddingRight: '5%',
-              paddingLeft: '4%',
-              paddingTop: 'calc(6% - 0.5em)',
-            }}
-          ></textarea>
-          <Button
-            children={{
-              className: 'relative top-[88px] left-[292px]',
-              type: 'submit',
-              disabled: isLoading,
-            }}
-          />
-        </form>
       </div>
+      <form onSubmit={handleSubmit} className="w-[334px] h-[56px]">
+        <textarea
+          className="relative w-[334px] h-[56px] top-[15px] border-4 p-2 mb-8 rounded-full shadow-xl resize-none overflow-y-hidden"
+          value={input}
+          placeholder="Say Something to Philo :)"
+          onChange={handleInputChange}
+          onKeyDown={handleEnterKeyDown}
+          rows={2}
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            paddingRight: '5%',
+            paddingLeft: '4%',
+            paddingTop: 'calc(6% - 0.5em)',
+          }}
+        ></textarea>
+        <Button
+          children={{
+            className: 'relative top-[88px] left-[292px]',
+            type: 'submit',
+            disabled: isLoading,
+          }}
+        />
+      </form>
     </section>
   )
 }

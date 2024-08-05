@@ -5,10 +5,12 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import Burger from '../svgs/burger'
 import { useState } from 'react'
+import { useSession, signIn, signOut } from 'next-auth/react'
 
 export default function NavBar() {
+  const { data: session, status } = useSession()
+
   const [show, setShow] = useState(false)
-  const [signedIn, setSignedIn] = useState(false)
   const handleClick = () => {
     setShow(!show)
   }
@@ -51,25 +53,46 @@ export default function NavBar() {
           whileHover={{ scale: 1.1 }}
           className="hidden sm:block absolute right-[286px] top-[44px] text-[19px] font-bold text-white"
         >
-          <Link href="/signin">SIGN IN</Link>
+          {session ? (
+            <h1>
+              Welcome{' '}
+              {session.user.name?.slice(0, session.user.name.indexOf(' '))}!{' '}
+            </h1>
+          ) : (
+            <Link href="/signin">SIGN IN</Link>
+          )}
         </motion.li>
-        <motion.div
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          className="absolute right-[24px] top-[44px]"
-        >
-          <button onClick={handleClick} className="sm:hidden">
+        <motion.div className="absolute right-[24px] top-[44px] ">
+          <div onClick={handleClick} className="sm:hidden">
             {show ? (
-              <>
-                <Link href="/signin">SIGN IN</Link>
-                {' | '}
-                <Link href="/chat">CHAT</Link> {' | '}{' '}
-                <Link href="/">HOME</Link>
-              </>
+              <div className="flex flex-col justify-center items-end">
+                {session ? (
+                  <h1>Welcome {session.user.name?.split(' ')[0]}!</h1>
+                ) : (
+                  <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                  >
+                    <Link href="/signin">SIGN IN</Link>
+                  </motion.div>
+                )}
+                <motion.div
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <Link href="/chat">CHAT</Link>
+                </motion.div>
+                <motion.div
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <Link href="/">HOME</Link>
+                </motion.div>
+              </div>
             ) : (
               <Burger />
             )}
-          </button>
+          </div>
         </motion.div>
       </ul>
     </nav>
