@@ -16,10 +16,10 @@ export async function POST(req: Request) {
     const { messages } = await req.json()
     const messagesTruncated = messages.slice(-10)
 
-    console.log('Truncated Messages' + JSON.stringify(messagesTruncated))
-
     const introduceMessage =
       'Your name is Philo. Always introduce at the start of your conversation and ask the user to introduce them selves.'
+    const constraint =
+      "You are supposed to mimic a person's intelligence. That means you do not know all the information in the world."
     const personalityMessage = 'You are an emotional support friend.'
     const mimicMessage =
       "I need you to mimic the way the person talks. Your dialect should be similar to how their sentence is structured. Add some filler words 10% of the responses. Don't forget to add 'lol' or acronyms but only if they use it."
@@ -39,6 +39,7 @@ export async function POST(req: Request) {
         {
           role: 'system',
           content:
+            constraint +
             introduceMessage +
             personalityMessage +
             mimicMessage +

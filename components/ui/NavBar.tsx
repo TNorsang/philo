@@ -93,12 +93,15 @@ export default function NavBar() {
                 {session ? (
                   <h1>Welcome {session.user.name?.split(' ')[0]}!</h1>
                 ) : (
-                  <motion.div
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
+                  <button
+                    onClick={(e) => {
+                      e.preventDefault()
+                      signIn('provider', { callbackUrl: '/' })
+                    }}
                   >
-                    <Link href="/signIn">SIGN IN</Link>
-                  </motion.div>
+                    {' '}
+                    Sign In
+                  </button>
                 )}
                 <motion.div
                   whileHover={{ scale: 1.1 }}

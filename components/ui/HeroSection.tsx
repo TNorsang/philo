@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
-import { useSession } from 'next-auth/react'
+import { useSession, signIn, signOut } from 'next-auth/react'
 
 export default function HeroSection({ signedIn }: { signedIn: boolean }) {
   const { data: session } = useSession()
@@ -39,9 +39,17 @@ export default function HeroSection({ signedIn }: { signedIn: boolean }) {
               className="text-[13px] w-[92px] h-[40px] sm:text-[20px] sm:w-[140px] sm:h-[52px] lg:text-[24px] lg:w-[200px] lg:h-[60px]  top-[0px] bg-gradient-to-b from-white to-gray-300 flex justify-center items-center  font-semibold text-customFontOrange relative"
             >
               {session ? (
-                <button>Hi {session.user.name?.split(' ')[0]}!</button>
+                <Link href="/chat">Hi {session.user.name?.split(' ')[0]}!</Link>
               ) : (
-                <button>Get Started</button>
+                <button
+                  onClick={(e) => {
+                    e.preventDefault()
+                    signIn('provider', { callbackUrl: '/' })
+                  }}
+                >
+                  {' '}
+                  Get Started!
+                </button>
               )}
             </motion.div>
           </Link>

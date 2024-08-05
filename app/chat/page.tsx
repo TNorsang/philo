@@ -29,8 +29,8 @@ export default function Chat() {
   }
 
   return (
-    <section className="">
-      <div className="flex flex-col items-center">
+    <section className="relative last:flex flex-col justify-center items-center h-screen">
+      <div className="absolute top-[0px] flex flex-col items-center">
         <div
           ref={ref}
           className="w-screen h-[472px] overflow-y-scroll overflow-x-hidden bg-gray-300 bg-opacity-50 relative top-[144px] flex flex-col items-center p-[16px]"
@@ -62,7 +62,10 @@ export default function Chat() {
           ))}
         </div>
       </div>
-      <form onSubmit={handleSubmit} className="w-[334px] h-[56px]">
+      <form
+        onSubmit={handleSubmit}
+        className="w-[334px] h-[56px] absolute top-[64%]"
+      >
         <textarea
           className="relative w-[334px] h-[56px] top-[15px] border-4 p-2 mb-8 rounded-full shadow-xl resize-none overflow-y-hidden"
           value={input}
@@ -81,7 +84,7 @@ export default function Chat() {
         ></textarea>
         <Button
           children={{
-            className: 'relative top-[88px] left-[292px]',
+            className: 'relative top-[-55px] left-[292px]',
             type: 'submit',
             disabled: isLoading,
           }}
