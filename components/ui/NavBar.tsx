@@ -37,6 +37,21 @@ export default function NavBar() {
           Philo
         </motion.div>
 
+        <motion.div></motion.div>
+        <motion.li
+          whileHover={{ scale: 1.1 }}
+          className="hidden sm:block absolute right-[32px] top-[199px] text-[19px] font-bold text-white"
+        >
+          {session && (
+            <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+              <button onClick={() => signOut({ callbackUrl: '/' })}>
+                {' '}
+                Sign Out
+              </button>
+            </motion.li>
+          )}
+        </motion.li>
+
         <motion.li
           whileHover={{ scale: 1.1 }}
           className="hidden sm:block absolute right-[80px] top-[44px] text-[19px] font-bold text-white"
@@ -59,7 +74,11 @@ export default function NavBar() {
               {session.user.name?.slice(0, session.user.name.indexOf(' '))}!{' '}
             </h1>
           ) : (
-            <Link href="/signin">SIGN IN</Link>
+            // <Link href="/signin">SIGN IN</Link>
+            <button onClick={() => signIn('provider', { callbackUrl: '/' })}>
+              {' '}
+              Sign In
+            </button>
           )}
         </motion.li>
         <motion.div className="absolute right-[24px] top-[44px] ">
@@ -73,7 +92,7 @@ export default function NavBar() {
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                   >
-                    <Link href="/signin">SIGN IN</Link>
+                    <Link href="/signIn">SIGN IN</Link>
                   </motion.div>
                 )}
                 <motion.div
@@ -88,6 +107,17 @@ export default function NavBar() {
                 >
                   <Link href="/">HOME</Link>
                 </motion.div>
+                {session && (
+                  <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                  >
+                    <button onClick={() => signOut({ callbackUrl: '/' })}>
+                      {' '}
+                      Sign Out
+                    </button>
+                  </motion.div>
+                )}
               </div>
             ) : (
               <Burger />
