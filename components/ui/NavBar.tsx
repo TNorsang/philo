@@ -75,7 +75,12 @@ export default function NavBar() {
             </h1>
           ) : (
             // <Link href="/signin">SIGN IN</Link>
-            <button onClick={() => signIn('provider', { callbackUrl: '/' })}>
+            <button
+              onClick={(e) => {
+                e.preventDefault()
+                signIn('provider', { callbackUrl: '/' })
+              }}
+            >
               {' '}
               Sign In
             </button>
