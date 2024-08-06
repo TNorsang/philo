@@ -21,14 +21,14 @@ export default function HeroSectionV2({ signedIn }: { signedIn: boolean }) {
       <div className="relative z-10 flex flex-col items-center justify-center text-center px-4">
         <motion.div className="mb-8">
           <motion.h1
-            className="text-white font-semibold text-[30px] sm:text-[60px] lg:text-[88px]"
+            className="text-white font-semibold text-[54px] sm:text-[80px] lg:text-[88px]"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
           >
             You Belong
           </motion.h1>
-          <motion.h2 className="text-white font-thin text-[48px] sm:text-[60px] lg:text-[48px] ">
+          <motion.h2 className="text-white font-thin text-[34px] sm:text-[45px] lg:text-[48px] ">
             Artificial Emotion Platform
           </motion.h2>
         </motion.div>
@@ -45,7 +45,7 @@ export default function HeroSectionV2({ signedIn }: { signedIn: boolean }) {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1 }}
-              className="text-[13px] w-auto h-[40px] sm:text-[20px] sm:w-auto sm:h-[52px] lg:text-[24px] lg:w-auto lg:h-auto lg:p-3 border-2 border-white flex justify-center items-center font-semibold text-white"
+              className="text-[20px] w-auto h-auto p-3 sm:text-[24px] sm:w-auto sm:h-auto sm:p-3  lg:w-auto lg:h-auto lg:p-3 border-2 border-white flex justify-center items-center font-semibold text-white"
             >
               {session ? (
                 <Link href="/chat">Hi {session.user.name?.split(' ')[0]}!</Link>
