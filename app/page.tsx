@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from 'react'
 import Cursor from '@/components/ui/Cursor'
-import CloudWeatherBackground from '@/components/ui/Cloud'
 import MainContentSection from '@/components/ui/MainContentSection'
 import HeroSectionV2 from '@/components/ui/HeroSectionV2'
 
@@ -30,7 +29,6 @@ export default function Home() {
 
   return (
     <main className="relative">
-      {/* <CloudWeatherBackground /> */}
       <div className="relative z-10 ">{showCursor && <Cursor />}</div>
       <HeroSectionV2 signedIn={signedIn} />
 

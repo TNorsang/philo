@@ -62,13 +62,44 @@ export default function HeroSectionV2({ signedIn }: { signedIn: boolean }) {
         className="absolute inset-0 flex items-center justify-center"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 2, delay: 5 }}
         style={{
           x: cloudX,
           y: cloudY,
         }}
       >
-        <OneCloud className="w-[80%] h-auto max-w-3xl opacity-80" />
+        <OneCloud className="w-[50%] relative left-[10%] top-[-20%] h-auto max-w-3xl opacity-70" />
+        <OneCloud className="w-[50%] relative left-[10%] top-[20%] h-auto max-w-3xl opacity-70" />
+        <OneCloud className="w-[90%] relative right-[10%] top-[10%] h-auto max-w-3xl opacity-85" />
+        <OneCloud className="w-[90%] relative right-[10%] top-[50%] h-auto max-w-3xl opacity-85" />
+      </motion.div>
+
+      <motion.div
+        className="absolute inset-0 flex items-center justify-center"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 3, delay: 8 }}
+        style={{
+          x: cloudX,
+          y: cloudY,
+        }}
+      >
+        <OneCloud className="w-[90%] relative top-[-20%] h-auto max-w-3xl opacity-36" />
+        <OneCloud className="w-[90%] relative left-[10%] top-[50%] h-auto max-w-3xl opacity-85" />
+      </motion.div>
+
+      <motion.div
+        className="absolute inset-0 flex items-center justify-center"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 3, delay: 11 }}
+        style={{
+          x: cloudX,
+          y: cloudY,
+        }}
+      >
+        <OneCloud className="w-[90%] relative right-[30%] top-[35%] h-auto max-w-3xl opacity-85" />
+        <OneCloud className="w-[90%] relative left-[5%] top-[10%] h-auto max-w-3xl opacity-85" />
       </motion.div>
 
       {/* Content Wrapper */}
@@ -84,7 +115,7 @@ export default function HeroSectionV2({ signedIn }: { signedIn: boolean }) {
             className="text-white font-semibold text-[54px] sm:text-[80px] lg:text-[88px]"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 3, delay: 1 }}
             style={{
               y: titleY,
               x: titleX,
@@ -94,6 +125,9 @@ export default function HeroSectionV2({ signedIn }: { signedIn: boolean }) {
           </motion.h1>
           <motion.h2
             className="text-white font-thin text-[34px] sm:text-[45px] lg:text-[48px]"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 3, delay: 3 }}
             style={{
               y: subtitleY,
               x: subtitleX,
@@ -107,7 +141,7 @@ export default function HeroSectionV2({ signedIn }: { signedIn: boolean }) {
           className="flex flex-col items-center"
           initial={{ opacity: 0, y: -25 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.5 }}
+          transition={{ duration: 2.4, delay: 6 }}
           style={{
             y: buttonY,
             x: buttonX,
