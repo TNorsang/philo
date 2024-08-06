@@ -3,8 +3,10 @@
 import React, { useState, useEffect } from 'react'
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useSession, signIn } from 'next-auth/react'
 import HeroBG from '../svgs/HeroBG'
+import OneCloud from '../svgs/OneCloud'
 
 export default function HeroSectionV2({ signedIn }: { signedIn: boolean }) {
   const { data: session } = useSession()
@@ -47,12 +49,27 @@ export default function HeroSectionV2({ signedIn }: { signedIn: boolean }) {
   const buttonY = useTransform(springY, [-50, 50], [-5, 5])
   const buttonX = useTransform(springX, [-50, 50], [-5, 5])
 
+  const cloudX = useTransform(springX, [-50, 50], [-10, 10])
+  const cloudY = useTransform(springY, [-50, 50], [-5, 5])
+
   return (
     <div className="relative w-full h-screen overflow-hidden flex items-center justify-center perspective-1000">
-      {/* SVG Background - now static */}
       <div className="absolute inset-0 w-full h-full">
         <HeroBG className="w-full h-full object-cover" />
       </div>
+
+      <motion.div
+        className="absolute inset-0 flex items-center justify-center"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        style={{
+          x: cloudX,
+          y: cloudY,
+        }}
+      >
+        <OneCloud className="w-[80%] h-auto max-w-3xl opacity-80" />
+      </motion.div>
 
       {/* Content Wrapper */}
       <div className="relative z-10 flex flex-col items-center justify-center text-center px-4">
@@ -115,7 +132,7 @@ export default function HeroSectionV2({ signedIn }: { signedIn: boolean }) {
                     signIn('provider', { callbackUrl: '/' })
                   }}
                 >
-                  Imagine Companion
+                  Imagine True Companion
                 </button>
               )}
             </motion.div>
