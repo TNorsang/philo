@@ -22,7 +22,7 @@ export default function NavBar() {
           <motion.div
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="absolute top-[34px] left-[32px]"
+            className="absolute top-[18px] left-[14px] sm:top-[34px] sm:left-[32px]"
           >
             <Image
               className="rounded-full"
@@ -33,7 +33,7 @@ export default function NavBar() {
             />
           </motion.div>
         </Link>
-        <motion.div className="absolute left-[84px] top-[36px] text-[32px] font-bold text-white">
+        <motion.div className="absolute left-[64px] top-[18px] text-[32px] sm:left-[84px] sm:top-[36px] sm:text-[32px] font-bold text-white">
           Philo
         </motion.div>
 
@@ -86,7 +86,7 @@ export default function NavBar() {
             </button>
           )}
         </motion.li>
-        <motion.div className="absolute right-[24px] top-[44px] ">
+        <motion.div className="absolute right-[24px] top-[30px] ">
           <div onClick={handleClick} className="sm:hidden">
             {show ? (
               <div className="flex flex-col justify-center items-end">
