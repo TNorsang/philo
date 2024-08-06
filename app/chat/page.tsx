@@ -79,7 +79,7 @@ export default function Chat() {
           />
           <Button
             children={{
-              className: 'relative top-[-26px] left-[-40px]',
+              className: 'relative top-[-28px] left-[-40px]',
               type: 'submit',
               disabled: isLoading,
             }}
