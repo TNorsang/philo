@@ -18,7 +18,7 @@ export default function Chat() {
   const handleEnterKeyDown = (
     event: React.KeyboardEvent<HTMLTextAreaElement>,
   ) => {
-    if (event.key === 'Enter') {
+    if (event.key === 'Enter' && !event.shiftKey) {
       event.preventDefault()
       const syntheticEvent = new Event('submit', {
         bubbles: true,
@@ -29,67 +29,63 @@ export default function Chat() {
   }
 
   return (
-    <section className="relative last:flex flex-col justify-center items-center h-screen">
-      <div className="absolute top-[0px] flex flex-col items-center">
+    <section className="flex flex-col h-screen">
+      <div className="flex-grow overflow-hidden pt-20">
         <div
           ref={ref}
-          className="w-screen h-[472px] overflow-y-scroll overflow-x-hidden bg-gray-300 bg-opacity-50 relative top-[144px] flex flex-col items-center p-[16px]"
+          className="relative top-[15%] h-3/4 overflow-y-auto bg-gray-300 bg-opacity-50 p-4"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
-          {error && <div className="text-sm">{error.message}</div>}
+          {error && (
+            <div className="text-sm text-red-500 mb-4">{error.message}</div>
+          )}
           {messages.map((m, index) => (
-            <div key={index} className="">
+            <div
+              key={index}
+              className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'} mb-4`}
+            >
               {m.role === 'user' ? (
-                <span className="flex justify-end items-center w-screen pb-[16px]">
-                  <span className="text-white mr-[8px] bg-blue-500 p-[16px] rounded-2xl text-[16px]">
+                <>
+                  <div className="text-white bg-blue-500 p-4 rounded-2xl text-16px max-w-[80%]">
                     {m.content}
-                  </span>
-                  <span className="text-white pr-[8px] text-[16px] font-medium mr-[16px]">
+                  </div>
+                  <div className="text-white text-16px font-medium ml-2 self-end">
                     (You)
-                  </span>
-                </span>
+                  </div>
+                </>
               ) : (
-                <span className="flex items-center w-screen pl-[16px] pb-[16px]">
-                  <span className="text-white text-[16px] font-medium">
+                <>
+                  <div className="text-white text-16px font-medium mr-2 self-end">
                     (Philo)
-                  </span>
-                  <span className="text-white ml-[8px] bg-customOrange p-[16px] rounded-2xl text-[16px] mr-[16px]">
+                  </div>
+                  <div className="text-white bg-customOrange p-4 rounded-2xl text-16px max-w-[80%]">
                     {m.content}
-                  </span>
-                </span>
+                  </div>
+                </>
               )}
             </div>
           ))}
         </div>
       </div>
-      <form
-        onSubmit={handleSubmit}
-        className="w-[334px] h-[56px] absolute top-[64%]"
-      >
-        <textarea
-          className="relative w-[334px] h-[56px] top-[15px] border-4 p-2 mb-8 rounded-full shadow-xl resize-none overflow-y-hidden"
-          value={input}
-          placeholder="Say Something to Philo :)"
-          onChange={handleInputChange}
-          onKeyDown={handleEnterKeyDown}
-          rows={2}
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            paddingRight: '5%',
-            paddingLeft: '4%',
-            paddingTop: 'calc(6% - 0.5em)',
-          }}
-        ></textarea>
-        <Button
-          children={{
-            className: 'relative top-[-55px] left-[292px]',
-            type: 'submit',
-            disabled: isLoading,
-          }}
-        />
-      </form>
+      <div className="p-4 pb-20 flex justify-center">
+        <form onSubmit={handleSubmit} className="flex items-end w-3/4">
+          <textarea
+            className="flex-grow border-2 p-5 pl-10 pr-12 rounded-2xl shadow-md resize-none"
+            value={input}
+            placeholder=""
+            onChange={handleInputChange}
+            onKeyDown={handleEnterKeyDown}
+            rows={2}
+          />
+          <Button
+            children={{
+              className: 'relative top-[-26px] left-[-40px]',
+              type: 'submit',
+              disabled: isLoading,
+            }}
+          />
+        </form>
+      </div>
     </section>
   )
 }

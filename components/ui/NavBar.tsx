@@ -46,7 +46,7 @@ export default function NavBar() {
             <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
               <button onClick={() => signOut({ callbackUrl: '/' })}>
                 {' '}
-                Sign Out
+                SIGN OUT
               </button>
             </motion.li>
           )}
@@ -70,8 +70,11 @@ export default function NavBar() {
         >
           {session ? (
             <h1>
-              Welcome{' '}
-              {session.user.name?.slice(0, session.user.name.indexOf(' '))}!{' '}
+              WELCOME{' '}
+              {session.user.name
+                ?.slice(0, session.user.name.indexOf(' '))
+                .toUpperCase()}
+              !{' '}
             </h1>
           ) : (
             // <Link href="/signin">SIGN IN</Link>
@@ -82,7 +85,7 @@ export default function NavBar() {
               }}
             >
               {' '}
-              Sign In
+              SIGN IN
             </button>
           )}
         </motion.li>
@@ -91,7 +94,7 @@ export default function NavBar() {
             {show ? (
               <div className="flex flex-col justify-center items-end">
                 {session ? (
-                  <h1>Welcome {session.user.name?.split(' ')[0]}!</h1>
+                  <h1>WELCOME {session.user.name?.split(' ')[0]}!</h1>
                 ) : (
                   <button
                     onClick={(e) => {
@@ -100,7 +103,7 @@ export default function NavBar() {
                     }}
                   >
                     {' '}
-                    Sign In
+                    SIGN IN
                   </button>
                 )}
                 <motion.div
@@ -122,7 +125,7 @@ export default function NavBar() {
                   >
                     <button onClick={() => signOut({ callbackUrl: '/' })}>
                       {' '}
-                      Sign Out
+                      SIGN OUT
                     </button>
                   </motion.div>
                 )}
