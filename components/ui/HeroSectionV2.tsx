@@ -115,7 +115,7 @@ export default function HeroSectionV2({ signedIn }: { signedIn: boolean }) {
             className="text-white font-semibold text-[54px] sm:text-[80px] lg:text-[88px]"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 3, delay: 1 }}
+            transition={{ duration: 3, delay: 0.5 }}
             style={{
               y: titleY,
               x: titleX,
