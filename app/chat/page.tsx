@@ -33,7 +33,7 @@ export default function Chat() {
       <div className="flex-grow overflow-hidden pt-20">
         <div
           ref={ref}
-          className="relative top-[15%] h-3/4 overflow-y-auto bg-gray-300 bg-opacity-50 p-4"
+          className="relative top-[15%] h-3/4 overflow-y-auto bg-gray-300 bg-opacity-50 p-4 "
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {error && (
@@ -42,20 +42,20 @@ export default function Chat() {
           {messages.map((m, index) => (
             <div
               key={index}
-              className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'} mb-4`}
+              className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'} mb-4 `}
             >
               {m.role === 'user' ? (
                 <>
-                  <div className="text-white bg-blue-500 p-4 rounded-2xl text-16px max-w-[80%]">
+                  <div className="text-white bg-blue-500 p-4 rounded-2xl text-16px max-w-[80%] ">
                     {m.content}
                   </div>
-                  <div className="text-white text-16px font-medium ml-2 self-end">
+                  <div className="text-white text-16px font-medium ml-2 self-end flex  py-4">
                     (You)
                   </div>
                 </>
               ) : (
                 <>
-                  <div className="text-white text-16px font-medium mr-2 self-end">
+                  <div className="text-white text-16px font-medium mr-2 self-end py-4">
                     (Philo)
                   </div>
                   <div className="text-white bg-customOrange p-4 rounded-2xl text-16px max-w-[80%]">
