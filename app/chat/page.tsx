@@ -29,7 +29,7 @@ export default function Chat() {
   }
 
   return (
-    <section className="flex flex-col h-screen">
+    <section className="flex flex-col h-screen background">
       <div className="flex-grow overflow-hidden pt-20">
         <div
           ref={ref}
