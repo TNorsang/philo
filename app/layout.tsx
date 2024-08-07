@@ -6,6 +6,7 @@ import './globals.css'
 import NavBar from '@/components/ui/NavBar'
 import UnderMaintenance from '@/components/ui/UnderMaintenance'
 import { SessionProvider } from 'next-auth/react'
+import { Analytics } from '@vercel/analytics/react'
 
 const inter = Inter({ subsets: ['latin'] })
 
