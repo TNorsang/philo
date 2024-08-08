@@ -16,6 +16,7 @@ const authOptions: NextAuthOptions = {
     GoogleProvider({
       clientId: GOOGLE_CLIENT_ID ?? '',
       clientSecret: GOOGLE_CLIENT_SECRET ?? '',
+      checks: ['none'],
     }),
   ],
   callbacks: {
