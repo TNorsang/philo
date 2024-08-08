@@ -24,6 +24,7 @@ export default function RootLayout({
           </div>
           <div className="overflow-y-hidden">{children}</div>
           <UnderMaintenance />
+          <Analytics />
         </SessionProvider>
       </body>
     </html>
