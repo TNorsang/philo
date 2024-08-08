@@ -5,7 +5,7 @@ import { prisma } from '@/lib/db'
 
 const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID
 const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET
-const SECRET = process.env.SECRET
+const SECRET = process.env.NEXTAUTH_SECRET
 
 const authOptions: NextAuthOptions = {
   secret: SECRET,
