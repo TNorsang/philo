@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from 'react'
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion'
 import Link from 'next/link'
-import Image from 'next/image'
 import { useSession, signIn } from 'next-auth/react'
 import HeroBG from '../svgs/HeroBG'
 import OneCloud from '../svgs/OneCloud'
