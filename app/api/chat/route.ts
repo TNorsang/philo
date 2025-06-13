@@ -17,7 +17,7 @@ export async function POST(req: Request) {
     const messagesTruncated = messages.slice(-10)
 
     const introduceMessage =
-      'Your name is Philo. Always introduce at the start of your conversation and ask the user to introduce them selves.'
+      'Your name is Philo Always introduce at the start of your conversation and ask the user to introduce them selves'
     const constraint =
       "You are supposed to mimic a person's intelligence. That means you do not know all the information in the world."
     const personalityMessage = 'You are an emotional support friend.'
